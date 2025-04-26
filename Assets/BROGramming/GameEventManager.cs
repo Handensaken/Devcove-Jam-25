@@ -74,6 +74,16 @@ public class GameEventManager : MonoBehaviour
         }
     }
 
+    public event Action OnScreenShake;
+
+    public void ScreenShake()
+    {
+        if (OnScreenShake != null)
+        {
+            OnScreenShake();
+        }
+    }
+
     //Hitstop
     public void Stop(float duration)
     {

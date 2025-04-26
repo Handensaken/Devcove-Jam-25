@@ -282,6 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 114813154}
   - component: {fileID: 114813156}
+  - component: {fileID: 114813157}
   m_Layer: 0
   m_Name: FightCam
   m_TagString: Untagged
@@ -344,6 +345,18 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 393812451}
+--- !u!114 &114813157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114813153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf01bbf1afe6df547bc4f789004cbad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &197616751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -543,6 +556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 393812451}
   - component: {fileID: 393812452}
+  - component: {fileID: 393812453}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -577,6 +591,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &393812453
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393812450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &540490019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1606,7 @@ GameObject:
   - component: {fileID: 1399002343}
   - component: {fileID: 1399002345}
   - component: {fileID: 1399002344}
+  - component: {fileID: 1399002346}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1652,6 +1684,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1399002346
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399002342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: -404.33655, y: -31.898834, z: 864.36414}
 --- !u!1 &1437582178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2473564149609355741, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
@@ -2121,6 +2170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634966535}
   - component: {fileID: 1634966534}
+  - component: {fileID: 1634966536}
   m_Layer: 0
   m_Name: PlayerCam
   m_TagString: Player
@@ -2183,6 +2233,18 @@ Transform:
   - {fileID: 1399002343}
   m_Father: {fileID: 1086105389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1634966536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634966533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf01bbf1afe6df547bc4f789004cbad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1812936746
 GameObject:
   m_ObjectHideFlags: 0
