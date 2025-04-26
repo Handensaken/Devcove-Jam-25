@@ -24,8 +24,57 @@ public class GameEventManager : MonoBehaviour
         }
     }
 
+    public event Action OnResumeCamControl;
 
-    //Hitstop 
+    public void ResumeCamControl()
+    {
+        if (OnResumeCamControl != null)
+        {
+            OnResumeCamControl();
+        }
+    }
+
+    public event Action OnStopPlayerInput;
+
+    public void StopPlayerInput()
+    {
+        if (OnStopPlayerInput != null)
+        {
+            OnStopPlayerInput();
+        }
+    }
+
+    public event Action OnActivatePlayerInput;
+
+    public void ActivatePlayerInput()
+    {
+        if (OnActivatePlayerInput != null)
+        {
+            OnActivatePlayerInput();
+        }
+    }
+
+    public event Action OnFightStart;
+
+    public void FightStart()
+    {
+        if (OnFightStart != null)
+        {
+            OnFightStart();
+        }
+    }
+
+    public event Action OnFightEnd;
+
+    public void FightEnd()
+    {
+        if (OnFightEnd != null)
+        {
+            OnFightEnd();
+        }
+    }
+
+    //Hitstop
     public void Stop(float duration)
     {
         Time.timeScale = 0.0f;
@@ -38,7 +87,7 @@ public class GameEventManager : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    //Pause for animations. If we wanna play animations, during this time, set their "Update mode" to "Unscaled Time". 
+    //Pause for animations. If we wanna play animations, during this time, set their "Update mode" to "Unscaled Time".
     public void SetTimeScale(float newTimeScale)
     {
         //Stops if there are any current hitstops from starting the game again

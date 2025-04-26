@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     private GameObject player;
     private float distanceToPlayer = 0;
     private float negativeSideOfPlayerSign;
-    private enemyState state = enemyState.angry;
+    private enemyState state = enemyState.idle;
 
     private void OnValidate()
     {
@@ -33,40 +33,46 @@ public class EnemyAI : MonoBehaviour
         player = FindObjectOfType<PlayerController>().gameObject;
     }
 
-    //TODO: Allt. 
+    //TODO: Allt.
     void Update()
     {
         var meMinusPlayer = transform.position - player.transform.position;
         distanceToPlayer = Vector2.SqrMagnitude(meMinusPlayer);
         negativeSideOfPlayerSign = Mathf.Sign(meMinusPlayer.x);
 
-        if(state == enemyState.idle)
+        if (state == enemyState.idle)
         {
             anim.SetBool("Walking", false);
         }
-
         else if (state == enemyState.angry)
         {
             anim.SetBool("Walking", true);
 
-            var targetPosition = player.transform.position + new Vector3(negativeSideOfPlayerSign * attackRange - 0.1f, 0);
+            var targetPosition =
+                player.transform.position
+                + new Vector3(negativeSideOfPlayerSign * attackRange - 0.1f, 0);
             targetPosition.z = 0;
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                targetPosition,
+                speed * Time.deltaTime
+            );
 
-            if(distanceToPlayer <= sqrAttackRange && Mathf.Abs(meMinusPlayer.y) < Mathf.Abs(meMinusPlayer.x))
+            if (
+                distanceToPlayer <= sqrAttackRange
+                && Mathf.Abs(meMinusPlayer.y) < Mathf.Abs(meMinusPlayer.x)
+            )
             {
                 anim.SetTrigger("Attack");
                 anim.SetBool("Walking", false);
                 state = enemyState.attacking;
             }
         }
-
-        else if(state == enemyState.attacking)
+        else if (state == enemyState.attacking)
         {
             //trollol
         }
-
         else if (state == enemyState.fleeing)
         {
             Debug.Log("Jag flyr nu reeee");
