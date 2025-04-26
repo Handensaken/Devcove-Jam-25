@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-public class CamControl : MonoBehaviour
+public class FightRoomControl : MonoBehaviour
 {
     [SerializeField]
     private CinemachineVirtualCamera fightCam;
@@ -14,13 +14,14 @@ public class CamControl : MonoBehaviour
     [SerializeField]
     private GameObject EndMarker;
 
+    [SerializeField]
+    private EnemySpawner enemySpawner;
+
     void Start()
     {
         //        Debug.Log(GameEventManager.instance);
         GameEventManager.instance.OnResumeCamControl += ToPlayer;
     }
-
-    
 
     void OnDestroy()
     {
@@ -43,7 +44,13 @@ public class CamControl : MonoBehaviour
                 fightCam.gameObject.SetActive(true);
                 GetComponent<BoxCollider2D>().isTrigger = false;
                 GameEventManager.instance.StopPlayerInput();
+                Invoke("HahaOOgerBooger", 2f);
             }
         }
+    }
+
+    void HahaOOgerBooger()
+    {
+        enemySpawner.Activate();
     }
 }

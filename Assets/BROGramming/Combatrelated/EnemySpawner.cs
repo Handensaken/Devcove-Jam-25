@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+    //    Activate();
     }
 
     // Update is called once per frame
@@ -35,7 +35,8 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         int spawnplace = Random.Range(0, spawnlocations.Count);
-        Instantiate(enemy, spawnlocations[spawnplace].position, Quaternion.identity);
+        GameObject enemyyy = Instantiate(enemy, spawnlocations[spawnplace].position, Quaternion.identity);
+        enemyyy.GetComponent<EnemyHealth>().AddConnectedRoom(gameObject);
         enemiesAlive++;
         
     }
@@ -63,9 +64,10 @@ public class EnemySpawner : MonoBehaviour
        
     }
 
-    //Denna måste kallas för att starta igång rummet
+    //Denna mï¿½ste kallas fï¿½r att starta igï¿½ng rummet
     public void Activate()
     {
+        Debug.Log("ACTIVATE");
         shouldSpawn = true;
     }
 }

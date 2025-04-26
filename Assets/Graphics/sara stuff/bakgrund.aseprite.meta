@@ -123,7 +123,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: bakgrund
     originalName: 
-    pivot: {x: 0.49459043, y: 0}
+    pivot: {x: 0.49459043, y: -0.74208146}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -131,7 +131,7 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 1294
-      height: 371
+      height: 221
     spriteID: bd2b558b8c300384c812b616dc8c52b9
     spriteBone: []
     spriteOutline: []
@@ -155,9 +155,9 @@ ScriptedImporter:
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 0
+        y: 164
         width: 1294
-        height: 371
+        height: 221
       spriteId: bd2b558b8c300384c812b616dc8c52b9
     linkedCells: []
     parentIndex: -1

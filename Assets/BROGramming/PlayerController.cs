@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
         Mage
     }
 
+    private Animator anim;
     private PlayerClass playerClass;
 
     private PlayerInput playerInput;
@@ -88,6 +89,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         //Initiates the player with as a mage with max mana
         playerClass = PlayerClass.Mage;
@@ -125,7 +127,7 @@ public class PlayerController : MonoBehaviour
     {
         playerInput.actions.FindActionMap("Player").Disable();
 
-        GetComponent<Animator>().SetTrigger("John Anime");
+        anim.SetTrigger("John Anime");
     }
 
     void OnDisable()
@@ -151,7 +153,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-        GetComponent<Animator>().SetFloat("MovDir", movementInput.x);
+       if(anim != null) anim.SetFloat("MovDir", movementInput.x);
         //avoid bounds
         if (transform.position.y >= bounds.x && movementInput.y > 0)
         {
@@ -224,7 +226,8 @@ public class PlayerController : MonoBehaviour
                 if (timeBetweenPunches < timePassed)
                 {
                     Debug.Log("Punch");
-                    Instantiate(fist, fistHolder.transform.position, Quaternion.identity);
+                    anim.SetTrigger("Punch");
+                    //Instantiate(fist, fistHolder.transform.position, Quaternion.identity);
                     timePassed = 0;
                 }
             }
@@ -265,6 +268,7 @@ public class PlayerController : MonoBehaviour
         {
             //tells the resolution manager to change the resolution of the game
             resolutionManager.ChangeResolution();
+            GameEventManager.instance.ScreenShake();
 
             //checks and changes player sprite and updates player class state
             if (playerClass == PlayerClass.Mage)
