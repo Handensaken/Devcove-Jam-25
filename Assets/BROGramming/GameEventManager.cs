@@ -13,15 +13,14 @@ public class GameEventManager : MonoBehaviour
         instance = this;
     }
 
+    //Event invoked when the player is forced to switch to brawler
     public event Action OnForcedSwitch;
 
     public void ForcedSwitch()
     {
         if (OnForcedSwitch != null)
         {
-           // Debug.Log("initiating switch event");
             OnForcedSwitch();
         }
     }
-    // Update is called once per frame
 }

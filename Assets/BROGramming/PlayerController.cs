@@ -21,24 +21,26 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer playerSpriteRenderer;
 
     //Sets up the 2 states for the player to have
-    private enum PlayerClasses
+    private enum PlayerClass
     {
         Brawler,
         Mage
     }
 
-    private PlayerClasses playerClasses;
+    private PlayerClass playerClass;
     private float mana;
 
     // Start is called before the first frame update
     void Start()
     {
         //Initiates the player with as a mage with 1 mana
-        playerClasses = PlayerClasses.Mage;
+        playerClass = PlayerClass.Mage;
         mana = 1;
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    //Set up player switch event. This could be done natively as is now, but later down the line we want effects and shit to be able to
+    //hijack the event without needing 4 billion references here
     void OnEnable()
     {
         Debug.Log(GameEventManager.instance);
@@ -97,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
             //playerClass.Attack();
 
-            if (playerClasses == PlayerClasses.Mage)
+            if (playerClass == PlayerClass.Mage)
             {
                 mana--;
                 Debug.Log("Mage Attack");
@@ -121,7 +123,7 @@ public class PlayerController : MonoBehaviour
                     //    Debug.Log("Recognizing Mage");
                 }
             }*/
-            if (playerClasses == PlayerClasses.Mage)
+            if (playerClass == PlayerClass.Mage)
             {
                 if (mana < 1)
                 {
@@ -149,23 +151,26 @@ public class PlayerController : MonoBehaviour
              Debug.Log("Preventing switch due to insufficient mana");
              return;
          }*/
-        if (mana < 1 && playerClasses == PlayerClasses.Brawler)
+        if (mana < 1 && playerClass == PlayerClass.Brawler)
         {
             Debug.Log("Preventing switch due to insufficient mana");
             return;
         }
         else
         {
+            //tells the resolution manager to change the resolution of the game
             resolutionManager.ChangeResolution();
-            if (playerClasses == PlayerClasses.Mage)
+
+            //checks and changes player sprite and updates player class state
+            if (playerClass == PlayerClass.Mage)
             {
                 playerSpriteRenderer.color = Color.magenta;
-                playerClasses = PlayerClasses.Brawler;
+                playerClass = PlayerClass.Brawler;
             }
-            else if (playerClasses == PlayerClasses.Brawler)
+            else if (playerClass == PlayerClass.Brawler)
             {
                 playerSpriteRenderer.color = Color.red;
-                playerClasses = PlayerClasses.Mage;
+                playerClass = PlayerClass.Mage;
             }
             else
             {
@@ -173,7 +178,7 @@ public class PlayerController : MonoBehaviour
                     "Some-fucking-how the player has aquired a third, unidentified class"
                 );
             }
-            Debug.Log($"Mana is {mana} | new player class is {playerClasses}");
+            Debug.Log($"Mana is {mana} | new player class is {playerClass}");
         }
     }
 }

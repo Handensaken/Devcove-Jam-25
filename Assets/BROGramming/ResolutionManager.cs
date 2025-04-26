@@ -25,11 +25,6 @@ public class ResolutionManager : MonoBehaviour
         pp.profile.TryGet(out cA);
     }
 
-    void OnEnable()
-    {
-        //GameEventManager.instance.OnForcedSwitch += ChangeResolution;
-    }
-
     void OnDisable()
     {
         cA.active = false;
@@ -37,7 +32,6 @@ public class ResolutionManager : MonoBehaviour
         ScalableBufferManager.ResizeBuffers(1f, 1f);
         lowRes = false;
 
-        //GameEventManager.instance.OnForcedSwitch -= ChangeResolution;
     }
 
     // Update is called once per frame
@@ -54,14 +48,10 @@ public class ResolutionManager : MonoBehaviour
 
     public void ChangeResolution()
     {
-        Debug.Log("Should change resolution");
         if (!lowRes)
         {
             //lowers resolution and activates chromatic aberration
             ScalableBufferManager.ResizeBuffers(0.1f, 0.1f);
-            //Debug.Log(
-            //    $"Width {ScalableBufferManager.widthScaleFactor} | Height {ScalableBufferManager.heightScaleFactor}"
-            //);
             lowRes = true;
             cA.active = true;
         }
@@ -69,7 +59,6 @@ public class ResolutionManager : MonoBehaviour
         {
             //deactivates chromatic aberration and resets texture resolution
             cA.active = false;
-            //Debug.Log("High Res");
             ScalableBufferManager.ResizeBuffers(1f, 1f);
             lowRes = false;
         }
