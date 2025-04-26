@@ -138,7 +138,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -175,5 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95831875394ec554f9ae6480540a41f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 5921063747756068041}
+  player: {fileID: 6061107873335638637, guid: 9da01fead14a4224299e9c9fe9b79203, type: 3}
   movespeed: 8
   damage: 69
