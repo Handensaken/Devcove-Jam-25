@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         mana = MaxMana;
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
 
-        Debug.Log(GameEventManager.instance);
+        //        Debug.Log(GameEventManager.instance);
         GameEventManager.instance.OnForcedSwitch += SwitchPlayerClass;
         GameEventManager.instance.OnActivatePlayerInput += ActivatePlayerInput;
         GameEventManager.instance.OnStopPlayerInput += DisablePlayerInput;
@@ -110,9 +110,15 @@ public class PlayerController : MonoBehaviour
         GameEventManager.instance.OnStopPlayerInput += DisablePlayerInput;*/
     }
 
-    void ActivatePlayerInput()
+    public void ActivatePlayerInput()
     {
+        Debug.Log("fu");
         playerInput.actions.FindActionMap("Player").Enable();
+    }
+
+    public void Fagagagaga()
+    {
+        Debug.Log("Fat whore");
     }
 
     void DisablePlayerInput()
@@ -145,6 +151,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
+        GetComponent<Animator>().SetFloat("MovDir", movementInput.x);
         //avoid bounds
         if (transform.position.y >= bounds.x && movementInput.y > 0)
         {
@@ -262,12 +269,12 @@ public class PlayerController : MonoBehaviour
             //checks and changes player sprite and updates player class state
             if (playerClass == PlayerClass.Mage)
             {
-                playerSpriteRenderer.color = Color.magenta;
+                //                playerSpriteRenderer.color = Color.magenta;
                 playerClass = PlayerClass.Brawler;
             }
             else if (playerClass == PlayerClass.Brawler)
             {
-                playerSpriteRenderer.color = Color.red;
+                // playerSpriteRenderer.color = Color.red;
                 playerClass = PlayerClass.Mage;
             }
             else
