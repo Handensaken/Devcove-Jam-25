@@ -8,7 +8,7 @@ public class spellBehaviour : MonoBehaviour
     private List<GameObject> damagedobjects = new List<GameObject>();
 
     [SerializeField] float movespeed;
-    [SerializeField] float damage;
+    [HideInInspector] public float damage = 10f;
     // Start is called before the first frame update
     void Start()
     {

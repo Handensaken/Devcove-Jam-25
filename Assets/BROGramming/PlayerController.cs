@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     //facingDir will be used to save the last known looking direction to orient the player sprite after moving
-    private Vector2 facingDir;
+   // private Vector2 facingDir;
     //Denna bool moggar din vector2
     [HideInInspector]
     public bool isFacingRight;
 
     //Reads the value from the input asset
     private Vector2 movementInput;
+
+    [SerializeField] Slider manaSlider;
 
     [SerializeField]
     private float movementSpeed = 5;
@@ -23,12 +26,29 @@ public class PlayerController : MonoBehaviour
 
     private SpriteRenderer playerSpriteRenderer;
 
-
+    [Header("Brawler stuff")]
     [SerializeField] GameObject fist;
     [SerializeField] Transform fistHolder;
 
+    [Header("Mage stuff")]
+    [SerializeField] int MaxMana = 100;
+    [Tooltip("The minimum amount of mana needed to switch to mage")]
+    [SerializeField] int manaThreshhold = 10;
     [SerializeField] GameObject fireball;
+    [Tooltip("The minimum time it will take to shoot a spell")]
+    [SerializeField] float minChargeTime = 0.1f;
+    [Tooltip("The max time the spell will scale with")]
+    [SerializeField] float maxChargeTime = 1f;
+    [Tooltip("The damage the spell will deal if shot at minimum charge")]
+    [SerializeField] float minDamage = 10;
+    [Tooltip("The damage the spell will deal if the shot is fully charged")]
+    [SerializeField] float maxDamage = 100f;
 
+    [SerializeField] float manaCost = 25f;
+
+   
+    private float timePassed = 0;
+    private float mana;
 
     //Sets up the 2 states for the player to have
     private enum PlayerClass
@@ -38,19 +58,19 @@ public class PlayerController : MonoBehaviour
     }
 
     private PlayerClass playerClass;
-    private float mana;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        //Initiates the player with as a mage with 1 mana
+        //Initiates the player with as a mage with max mana
         playerClass = PlayerClass.Mage;
-        mana = 1;
+        mana = MaxMana;
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     //Set up player switch event. This could be done natively as is now, but later down the line we want effects and shit to be able to
-    //hijack the event without needing 4 billion references here
+    //hijack the event without needing 4 billion references here (cringe)
     void OnEnable()
     {
         Debug.Log(GameEventManager.instance);
@@ -95,7 +115,7 @@ public class PlayerController : MonoBehaviour
         movementInput = ctx.ReadValue<Vector2>();
         if (ctx.action.inProgress)
         {
-            facingDir = movementInput;
+            if (movementInput.x >= 0) isFacingRight = true; else isFacingRight = false;
         }
     }
 
@@ -111,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
             if (playerClass == PlayerClass.Mage)
             {
-                mana--;
+                mana -= manaCost;
                 Debug.Log("Mage Attack");
             }
             else
@@ -125,15 +145,6 @@ public class PlayerController : MonoBehaviour
         //Probably needs to be restructured later to fit animations
         if (ctx.canceled)
         {
-            /*if (playerClass is Mage)
-            {
-                if (playerClass.Mana < 1)
-                {
-                    //Send event to switch
-                    GameEventManager.instance.ForcedSwitch();
-                    //    Debug.Log("Recognizing Mage");
-                }
-            }*/
             if (playerClass == PlayerClass.Mage)
             {
                 if (mana < 1)
@@ -156,12 +167,7 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchPlayerClass()
     {
-        /* if (playerClass.Mana < 1 && playerClass is Brawler)
-         {
-             Debug.Log("Preventing switch due to insufficient mana");
-             return;
-         }*/
-        if (mana < 1 && playerClass == PlayerClass.Brawler)
+        if (mana < manaThreshhold && playerClass == PlayerClass.Brawler)
         {
             Debug.Log("Preventing switch due to insufficient mana");
             return;
@@ -190,5 +196,11 @@ public class PlayerController : MonoBehaviour
             }
             Debug.Log($"Mana is {mana} | new player class is {playerClass}");
         }
+    }
+
+    public void RecieveMana(float manaRecieved)
+    {
+        mana += manaRecieved;
+        if (mana > MaxMana) mana = MaxMana;
     }
 }
