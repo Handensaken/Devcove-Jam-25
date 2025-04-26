@@ -10,9 +10,10 @@ public class fistBehaviour : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<IDamageable>(out _))
         {
+            Debug.Log("Found enemy hit");
             float random = Random.Range(minDamage, maxDamage);
             collision.gameObject.GetComponent<IDamageable>().Damage(random);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

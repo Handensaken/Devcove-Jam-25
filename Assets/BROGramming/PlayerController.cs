@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     GameObject fist;
 
     [SerializeField]
-    Transform fistHolder;
+    GameObject fistHolder;
 
     [SerializeField]
     float timeBetweenPunches;
@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isFacingRight = true;
         anim = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         //Initiates the player with as a mage with max mana
@@ -100,6 +101,7 @@ public class PlayerController : MonoBehaviour
         GameEventManager.instance.OnForcedSwitch += SwitchPlayerClass;
         GameEventManager.instance.OnActivatePlayerInput += ActivatePlayerInput;
         GameEventManager.instance.OnStopPlayerInput += DisablePlayerInput;
+        GameEventManager.instance.OnPlayerHurt += HurtPlayer;
     }
 
     //Set up player switch event. This could be done natively as is now, but later down the line we want effects and shit to be able to
@@ -135,6 +137,7 @@ public class PlayerController : MonoBehaviour
         GameEventManager.instance.OnForcedSwitch -= SwitchPlayerClass;
         GameEventManager.instance.OnActivatePlayerInput -= ActivatePlayerInput;
         GameEventManager.instance.OnStopPlayerInput -= DisablePlayerInput;
+        GameEventManager.instance.OnPlayerHurt -= HurtPlayer;
     }
 
     // Update is called once per frame
@@ -153,7 +156,8 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-       if(anim != null) anim.SetFloat("MovDir", movementInput.x);
+        if (anim != null)
+            anim.SetFloat("MovDir", movementInput.x);
         //avoid bounds
         if (transform.position.y >= bounds.x && movementInput.y > 0)
         {
@@ -181,6 +185,10 @@ public class PlayerController : MonoBehaviour
                 isFacingRight = false;
             }
         }
+        if (ctx.canceled)
+        {
+            isFacingRight = true;
+        }
     }
 
     public bool getfacingright()
@@ -189,6 +197,25 @@ public class PlayerController : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    [SerializeField]
+    private Transform SpellSpawnPos;
+
+    private void HurtPlayer(float f)
+    {
+        anim.SetTrigger("Hurt");
+    }
+
+    public void Yaya()
+    {
+        GameObject pog = Instantiate(fireball, SpellSpawnPos.position, Quaternion.identity);
+        if (isFacingRight)
+            //activate normal mage animation
+            pog.GetComponent<spellBehaviour>().ShootRight();
+        else
+            //activate flipped mage animation
+            pog.GetComponent<spellBehaviour>().ShootLeft();
     }
 
     //Reads attack input
@@ -208,15 +235,21 @@ public class PlayerController : MonoBehaviour
                     mana -= manaCost;
                     //TODO:Add support for charging attacks
                     //Here you could play an animation
-                    GameObject pog = Instantiate(
-                        fireball,
-                        fistHolder.transform.position,
-                        Quaternion.identity
-                    );
-                    if (isFacingRight)
-                        pog.GetComponent<spellBehaviour>().ShootRight();
-                    else
-                        pog.GetComponent<spellBehaviour>().ShootLeft();
+
+                    //I want to spawn the object from an animation event
+                    //But animation event's can't send gameobject references, so I need to think
+                    //GameObject pog = Instantiate(
+                    //     fireball,
+                    //    fistHolder.transform.position,
+                    //    Quaternion.identity
+                    //);
+                    anim.SetTrigger("Pew");
+                    //if (isFacingRight)
+                    //activate normal mage animation
+                    //  pog.GetComponent<spellBehaviour>().ShootRight();
+                    // else
+                    //activate flipped mage animation
+                    //  pog.GetComponent<spellBehaviour>().ShootLeft();
                     Debug.Log("Mage Attack");
                     timePassed = 0;
                 }
@@ -288,6 +321,18 @@ public class PlayerController : MonoBehaviour
                 );
             }
             Debug.Log($"Mana is {mana} | new player class is {playerClass}");
+        }
+    }
+
+    public void ActivateAttackbox(int i)
+    {
+        if (i == 1)
+        {
+            fist.SetActive(true);
+        }
+        else
+        {
+            fist.SetActive(false);
         }
     }
 
