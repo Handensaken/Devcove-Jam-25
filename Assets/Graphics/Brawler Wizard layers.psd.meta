@@ -3979,26 +3979,6 @@ ScriptedImporter:
     flatten: 0
     isImported: 0
     isVisible: 1
-  - name: Hat Front
-    spriteName: Hat Front
-    isGroup: 0
-    parentIndex: 0
-    spriteID: a7a1665ab9b13e54a9764bc6e1066c41
-    layerID: 4
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Head
-    spriteName: Head
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 4b162c2041b3d8f4f8653dcb78e1a7c5
-    layerID: 8
-    mosaicPosition: {x: 74, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
   - name: Hand front
     spriteName: Hand front
     isGroup: 0
@@ -4026,6 +4006,26 @@ ScriptedImporter:
     spriteID: 9763f78d15a14c848beacb04143a6740
     layerID: 11
     mosaicPosition: {x: 63, y: 38}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hat Front
+    spriteName: Hat Front
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a7a1665ab9b13e54a9764bc6e1066c41
+    layerID: 4
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Head
+    spriteName: Head
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4b162c2041b3d8f4f8653dcb78e1a7c5
+    layerID: 8
+    mosaicPosition: {x: 74, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
