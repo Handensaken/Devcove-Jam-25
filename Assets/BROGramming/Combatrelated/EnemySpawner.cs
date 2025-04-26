@@ -16,7 +16,6 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
     }
 
     // Update is called once per frame
@@ -64,7 +63,7 @@ public class EnemySpawner : MonoBehaviour
        
     }
 
-    //Denna måste kallas för att starta igång rummet
+    //Denna mï¿½ste kallas fï¿½r att starta igï¿½ng rummet
     public void Activate()
     {
         Debug.Log("ACTIVATE");
