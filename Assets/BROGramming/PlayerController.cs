@@ -20,26 +20,22 @@ public class PlayerController : MonoBehaviour
 
     private SpriteRenderer playerSpriteRenderer;
 
-    //creates player classes
-    private readonly Brawler brawler = new Brawler();
-    private readonly Mage mage = new Mage();
+    //Sets up the 2 states for the player to have
+    private enum PlayerClasses
+    {
+        Brawler,
+        Mage
+    }
 
-    private playerClass playerClass;
+    private PlayerClasses playerClasses;
+    private float mana;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerClass = mage;
-        playerClass.Mana = 1;
-        //THIS IS FUCKING NIGHTMARE CODE
-        //I HATE THESE FUCKING CLASSES
-        //THEY ARE CUNTS
-        //THEY CREATE THEIR OWN VALUES BECAUSE I AM BAD AT CODE
-        //FUCK YOU
-        //THEY WOULD WORK AS FUCKING ENUM STATES 
-        //BUT I THOUGHT ID BE CLEVER AND USE CLASS OVERRIDES BUT THAT IS LITERALLY JUST STUFF OF NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE 
-
-
+        //Initiates the player with as a mage with 1 mana
+        playerClasses = PlayerClasses.Mage;
+        mana = 1;
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -97,16 +93,37 @@ public class PlayerController : MonoBehaviour
         if (!ctx.action.inProgress)
         {
             //Debug.Log("HIT THAT CHILD");
-            playerClass.Attack();
+
+
+            //playerClass.Attack();
+
+            if (playerClasses == PlayerClasses.Mage)
+            {
+                mana--;
+                Debug.Log("Mage Attack");
+            }
+            else
+            {
+                Debug.Log("Punch");
+            }
         }
 
         //When the input is released and the player doesn't have any more mana, switches
         //Probably needs to be restructured later to fit animations
         if (ctx.canceled)
         {
-            if (playerClass is Mage)
+            /*if (playerClass is Mage)
             {
                 if (playerClass.Mana < 1)
+                {
+                    //Send event to switch
+                    GameEventManager.instance.ForcedSwitch();
+                    //    Debug.Log("Recognizing Mage");
+                }
+            }*/
+            if (playerClasses == PlayerClasses.Mage)
+            {
+                if (mana < 1)
                 {
                     //Send event to switch
                     GameEventManager.instance.ForcedSwitch();
@@ -127,28 +144,28 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchPlayerClass()
     {
-        if (playerClass.Mana < 1 && playerClass is Brawler)
+        /* if (playerClass.Mana < 1 && playerClass is Brawler)
+         {
+             Debug.Log("Preventing switch due to insufficient mana");
+             return;
+         }*/
+        if (mana < 1 && playerClasses == PlayerClasses.Brawler)
         {
             Debug.Log("Preventing switch due to insufficient mana");
             return;
         }
         else
         {
-            Debug.Log($"Mana is {playerClass.Mana} | player class is {playerClass}");
-            //  resolutionManager.ChangeResolution();
-
-            //Debug.Log("Switch");
-            //  if (resolutionManager != null)
-            //{
-            if (playerClass is Mage)
+            resolutionManager.ChangeResolution();
+            if (playerClasses == PlayerClasses.Mage)
             {
                 playerSpriteRenderer.color = Color.magenta;
-                playerClass = brawler;
+                playerClasses = PlayerClasses.Brawler;
             }
-            else if (playerClass is Brawler)
+            else if (playerClasses == PlayerClasses.Brawler)
             {
                 playerSpriteRenderer.color = Color.red;
-                playerClass = mage;
+                playerClasses = PlayerClasses.Mage;
             }
             else
             {
@@ -156,41 +173,7 @@ public class PlayerController : MonoBehaviour
                     "Some-fucking-how the player has aquired a third, unidentified class"
                 );
             }
-            /* }
-             else
-             {
-                 Debug.LogWarning("resolutionManager is null");
-             }*/
+            Debug.Log($"Mana is {mana} | new player class is {playerClasses}");
         }
-    }
-}
-
-public class playerClass
-{
-    public float Mana;
-
-    public playerClass()
-    {
-      //  this.Mana = 1;
-    }
-
-    public virtual void Attack() { }
-}
-
-public class Brawler : playerClass
-{
-    public override void Attack()
-    {
-        Debug.Log("Brawler Attack");
-    }
-}
-
-public class Mage : playerClass
-{
-    public override void Attack()
-    {
-        Mana--;
-
-        Debug.Log($"Mage Attack! new mana {Mana}");
     }
 }

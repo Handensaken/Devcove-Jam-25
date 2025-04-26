@@ -27,7 +27,7 @@ public class ResolutionManager : MonoBehaviour
 
     void OnEnable()
     {
-        GameEventManager.instance.OnForcedSwitch += ChangeResolution;
+        //GameEventManager.instance.OnForcedSwitch += ChangeResolution;
     }
 
     void OnDisable()
@@ -37,7 +37,7 @@ public class ResolutionManager : MonoBehaviour
         ScalableBufferManager.ResizeBuffers(1f, 1f);
         lowRes = false;
 
-        GameEventManager.instance.OnForcedSwitch -= ChangeResolution;
+        //GameEventManager.instance.OnForcedSwitch -= ChangeResolution;
     }
 
     // Update is called once per frame
