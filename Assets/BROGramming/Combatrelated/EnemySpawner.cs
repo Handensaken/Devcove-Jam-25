@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
                 NewWave();
             } else
             {
-                //Här kan man skicka ut ett event att rummet är klart
+                GameEventManager.instance.FightEnd();
                 Destroy(gameObject);
             }
         }
