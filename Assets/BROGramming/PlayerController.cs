@@ -155,6 +155,8 @@ public class PlayerController : MonoBehaviour
                 if (timeBetweenSpells < timePassed)
                 {
                     mana -= manaCost;
+                    //TODO:Add support for charging attacks
+                    //Here you could play an animation
                     GameObject pog = Instantiate(fireball, fistHolder.transform.position, Quaternion.identity);
                     if (isFacingRight) pog.GetComponent<spellBehaviour>().ShootRight(); else pog.GetComponent<spellBehaviour>().ShootLeft();
                     Debug.Log("Mage Attack");
