@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [Header("Brawler stuff")]
     [SerializeField] GameObject fist;
     [SerializeField] Transform fistHolder;
+    [SerializeField] float timeBetweenPunches
 
     [Header("Mage stuff")]
     [SerializeField] int MaxMana = 100;
@@ -46,7 +47,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float manaCost = 25f;
 
-   
+    [SerializeField] float timeBetweenSpells;
+
+    private float timeCharged = 0;
     private float timePassed = 0;
     private float mana;
 
@@ -86,6 +89,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        timePassed += Time.deltaTime;
     }
 
     //player bounds
@@ -115,10 +119,27 @@ public class PlayerController : MonoBehaviour
         movementInput = ctx.ReadValue<Vector2>();
         if (ctx.action.inProgress)
         {
-            if (movementInput.x >= 0) isFacingRight = true; else isFacingRight = false;
+            
+            if (movementInput.x >= 0)
+            {
+
+                isFacingRight = true;
+                Debug.Log("true:" + isFacingRight);
+            }
+            else
+            {
+
+                isFacingRight = false;
+                Debug.Log("false:" + isFacingRight);
+            }
+
         }
     }
 
+    public bool getfacingright()
+    {
+        if (isFacingRight) return true; else return false;
+    }
     //Reads attack input
     public void Attack(InputAction.CallbackContext ctx)
     {
@@ -131,13 +152,25 @@ public class PlayerController : MonoBehaviour
 
             if (playerClass == PlayerClass.Mage)
             {
-                mana -= manaCost;
-                Debug.Log("Mage Attack");
+                if (timeBetweenSpells < timePassed)
+                {
+                    mana -= manaCost;
+                    GameObject pog = Instantiate(fireball, fistHolder.transform.position, Quaternion.identity);
+                    if (isFacingRight) pog.GetComponent<spellBehaviour>().ShootRight(); else pog.GetComponent<spellBehaviour>().ShootLeft();
+                    Debug.Log("Mage Attack");
+                    timePassed = 0;
+                }
+               
             }
             else
             {
-                Debug.Log("Punch");
-                Instantiate(fist, fistHolder);
+                if (timeBetweenPunches < timePassed)
+                {
+                    Debug.Log("Punch");
+                    Instantiate(fist, fistHolder.transform.position, Quaternion.identity);
+                    timePassed = 0;
+                }
+               
             }
         }
 
@@ -201,6 +234,6 @@ public class PlayerController : MonoBehaviour
     public void RecieveMana(float manaRecieved)
     {
         mana += manaRecieved;
-        if (mana > MaxMana) mana = MaxMana;
+        if(mana > MaxMana) mana = MaxMana;
     }
 }
