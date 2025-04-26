@@ -68,11 +68,11 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer()
     {
         //avoid bounds
-        if (transform.position.y >= bounds.x - transform.localScale.y / 2 && movementInput.y > 0)
+        if (transform.position.y >= bounds.x && movementInput.y > 0)
         {
             movementInput.y = 0;
         }
-        if (transform.position.y <= bounds.y + transform.localScale.y / 2 && movementInput.y < 0)
+        if (transform.position.y <= bounds.y && movementInput.y < 0)
         {
             movementInput.y = 0;
         }
