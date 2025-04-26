@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     //facingDir will be used to save the last known looking direction to orient the player sprite after moving
     private Vector2 facingDir;
+    //Denna bool moggar din vector2
+    [HideInInspector]
+    public bool isFacingRight;
 
     //Reads the value from the input asset
     private Vector2 movementInput;
@@ -19,6 +22,13 @@ public class PlayerController : MonoBehaviour
     private ResolutionManager resolutionManager;
 
     private SpriteRenderer playerSpriteRenderer;
+
+
+    [SerializeField] GameObject fist;
+    [SerializeField] Transform fistHolder;
+
+    [SerializeField] GameObject fireball;
+
 
     //Sets up the 2 states for the player to have
     private enum PlayerClass
@@ -107,6 +117,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Debug.Log("Punch");
+                Instantiate(fist, fistHolder);
             }
         }
 
@@ -129,7 +140,6 @@ public class PlayerController : MonoBehaviour
                 {
                     //Send event to switch
                     GameEventManager.instance.ForcedSwitch();
-                    //    Debug.Log("Recognizing Mage");
                 }
             }
         }
