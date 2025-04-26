@@ -1,0 +1,1187 @@
+fileFormatVersion: 2
+guid: 99f8813e3b7c75e429f263f8ab8309f0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 0
+    importHiddenLayers: 0
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 0
+    importHiddenLayers: 0
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638812654837444851
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Layer 1
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 80
+      width: 0
+      height: 0
+    spriteID: e9da88473c4b21441801ee409258805b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -75, y: -112}
+  - name: Back upper arm
+    originalName: 
+    pivot: {x: -0.45454547, y: -1.4}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 38
+      width: 11
+      height: 15
+    spriteID: f19711bb8bf30bf49845301d80af1d53
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 38}
+  - name: Back lower arm
+    originalName: 
+    pivot: {x: -1.4285715, y: -1.8888888}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 90
+      width: 7
+      height: 9
+    spriteID: e3ac0547a0ee15e41b1f9863fb7594e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 90}
+  - name: Back Hand
+    originalName: 
+    pivot: {x: -0.7, y: -1.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 63
+      width: 10
+      height: 8
+    spriteID: a893c571a349b9b45b3336a245d62d31
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 108, y: 63}
+  - name: Back upper leg
+    originalName: 
+    pivot: {x: 0, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 63
+      width: 13
+      height: 9
+    spriteID: 28fb792e5523a5f438e5bb16bc40ac09
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 32, y: 63}
+  - name: Front upper leg
+    originalName: 
+    pivot: {x: 0.90000004, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 63
+      width: 10
+      height: 9
+    spriteID: 13f484791175b1349b12453ce4c348dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 53, y: 63}
+  - name: Front lower leg
+    originalName: 
+    pivot: {x: 0.90000004, y: -0.40000004}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 39
+      y: 90
+      width: 10
+      height: 5
+    spriteID: 2807e8055628c87468c7920bb90232ea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 39, y: 90}
+  - name: Front Shoe
+    originalName: 
+    pivot: {x: 0.9166667, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 90
+      width: 12
+      height: 5
+    spriteID: 443e78bcb6bdbd8499f38b7f428b0308
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 19, y: 90}
+  - name: Back Lower Leg
+    originalName: 
+    pivot: {x: -0.3, y: -0.11111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 63
+      width: 10
+      height: 9
+    spriteID: 7854c96df64fd4e4596c51ff7eaf05c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 63}
+  - name: Back Shoe
+    originalName: 
+    pivot: {x: -0.25, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 23
+      width: 12
+      height: 6
+    spriteID: b778467dcdeeec64998935092c6da2a7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 106, y: 23}
+  - name: Lower Body
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.90909094}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 4
+      width: 18
+      height: 11
+    spriteID: 0610b4dd5c0da264d95162f4fc412dc9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 106, y: 4}
+  - name: Upper Body
+    originalName: 
+    pivot: {x: 0.45000002, y: -1.1052631}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 63
+      width: 20
+      height: 19
+    spriteID: 30ed43aa156107d43905aec2b2c21bfb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 63}
+  - name: Front upper arm
+    originalName: 
+    pivot: {x: 1.3076924, y: -1.3333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 63
+      y: 38
+      width: 13
+      height: 15
+    spriteID: 12ff060af26c17348bf8a86f1780626a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 63, y: 38}
+  - name: Front lower arm
+    originalName: 
+    pivot: {x: 1.7, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 38
+      width: 10
+      height: 13
+    spriteID: 171b78af9c85487488bedbd44410d676
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 103, y: 38}
+  - name: Front Hand
+    originalName: 
+    pivot: {x: 1.2727273, y: -1.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 63
+      width: 11
+      height: 8
+    spriteID: a10f90f409581ce4782078a44c21a806
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 89, y: 63}
+  - name: Hat back
+    originalName: 
+    pivot: {x: 0.4117647, y: -2.1764705}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 38
+      width: 51
+      height: 17
+    spriteID: e12f8ecf7b96f734980fd579cae98039
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 38}
+  - name: Head
+    originalName: 
+    pivot: {x: 0.45833334, y: -1.9444445}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 4
+      width: 24
+      height: 18
+    spriteID: 9d9da66ca8ba46942ad32bef11f42e33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 4}
+  - name: Hatfront
+    originalName: 
+    pivot: {x: 0.5, y: -1.4615386}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 62
+      height: 26
+    spriteID: 6b444fae749ab7b4687388c4329d7745
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  spriteSheetImportData:
+  - name: Brawler Wizard_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 90
+      width: 7
+      height: 9
+    spriteID: e9fcb64d092f04d43b8bc7a3a3f03ee5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 90
+      width: 12
+      height: 5
+    spriteID: 34136ea6714528f4ea824e8b598dc2bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 39
+      y: 90
+      width: 10
+      height: 5
+    spriteID: 3adb150aa5ea9464084c48a942d1199f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 63
+      width: 20
+      height: 19
+    spriteID: d0af1a9438357ee42b29086f4fe4d0a9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 63
+      width: 13
+      height: 9
+    spriteID: b2c86fd831fe4a04eb0f14c6c6cfe0b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 63
+      width: 10
+      height: 9
+    spriteID: ddaf609b37275ac418f47a1efb18d16a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 63
+      width: 10
+      height: 9
+    spriteID: 48b398cdfdca3314e985b029febf2f80
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 63
+      width: 11
+      height: 8
+    spriteID: 6e77f81436d848249a4b42d8a9f63a3f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 63
+      width: 10
+      height: 8
+    spriteID: 3e3bb48b2514da249aafe52bf8d869dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 38
+      width: 51
+      height: 17
+    spriteID: ff1b4e270ea18bf4083c070c2d5d0fb9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 63
+      y: 38
+      width: 13
+      height: 15
+    spriteID: ed64bf7533fd2de408d4d9c89eb507cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 38
+      width: 11
+      height: 15
+    spriteID: 5515331a8bb0b0c418c1303621b1fbb3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 38
+      width: 10
+      height: 13
+    spriteID: 0882d84951cd48f4ea853c35f3453b28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 62
+      height: 26
+    spriteID: 816b3d695ef24654d9e60f9301dbc651
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 23
+      width: 12
+      height: 6
+    spriteID: b3dfb2ecc463ef845a0a8a6fd5160bf4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 4
+      width: 24
+      height: 18
+    spriteID: 90b790a353b2768448e834dc072eaa7c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Brawler Wizard_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 4
+      width: 18
+      height: 11
+    spriteID: fc34ffcbf8602964384ff081c73ce393
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1317222744
+    name: Layer 1
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Layer 1
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: -32
+        y: -64
+        width: 128
+        height: 192
+      spriteId: e9da88473c4b21441801ee409258805b
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: 1069352006
+    name: Group 1 Copy
+    layerFlags: 35
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 680782265
+    name: Back upper arm
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back upper arm
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 37
+        y: 21
+        width: 11
+        height: 15
+      spriteId: f19711bb8bf30bf49845301d80af1d53
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 3
+    guid: -1895436235
+    name: Back lower arm
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back lower arm
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 42
+        y: 17
+        width: 7
+        height: 9
+      spriteId: e3ac0547a0ee15e41b1f9863fb7594e8
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 4
+    guid: -1397752110
+    name: Back Hand
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back Hand
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 12
+        width: 10
+        height: 8
+      spriteId: a893c571a349b9b45b3336a245d62d31
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 5
+    guid: -2009891822
+    name: Back upper leg
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back upper leg
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 6
+        width: 13
+        height: 9
+      spriteId: 28fb792e5523a5f438e5bb16bc40ac09
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 6
+    guid: -1696323333
+    name: Front upper leg
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Front upper leg
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 23
+        y: 6
+        width: 10
+        height: 9
+      spriteId: 13f484791175b1349b12453ce4c348dd
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 7
+    guid: -1805373233
+    name: Front lower leg
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Front lower leg
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 23
+        y: 2
+        width: 10
+        height: 5
+      spriteId: 2807e8055628c87468c7920bb90232ea
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 8
+    guid: -1388090112
+    name: Front Shoe
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Front Shoe
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 21
+        y: 0
+        width: 12
+        height: 5
+      spriteId: 443e78bcb6bdbd8499f38b7f428b0308
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 9
+    guid: -1118537707
+    name: Back Lower Leg
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back Lower Leg
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 1
+        width: 10
+        height: 9
+      spriteId: 7854c96df64fd4e4596c51ff7eaf05c5
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 10
+    guid: -1036415102
+    name: Back Shoe
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back Shoe
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 0
+        width: 12
+        height: 6
+      spriteId: b778467dcdeeec64998935092c6da2a7
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 11
+    guid: -90210032
+    name: Lower Body
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Lower Body
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 24
+        y: 10
+        width: 18
+        height: 11
+      spriteId: 0610b4dd5c0da264d95162f4fc412dc9
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 12
+    guid: 820003078
+    name: Upper Body
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Upper Body
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 23
+        y: 21
+        width: 20
+        height: 19
+      spriteId: 30ed43aa156107d43905aec2b2c21bfb
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 13
+    guid: -1954922296
+    name: Front upper arm
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Front upper arm
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 20
+        width: 13
+        height: 15
+      spriteId: 12ff060af26c17348bf8a86f1780626a
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 14
+    guid: -1546748076
+    name: Front lower arm
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Front lower arm
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 13
+        width: 10
+        height: 13
+      spriteId: 171b78af9c85487488bedbd44410d676
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 15
+    guid: 1509435757
+    name: Front Hand
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Front Hand
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 9
+        width: 11
+        height: 8
+      spriteId: a10f90f409581ce4782078a44c21a806
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 16
+    guid: -1816998538
+    name: Hat back
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Hat back
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 37
+        width: 51
+        height: 17
+      spriteId: e12f8ecf7b96f734980fd579cae98039
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 17
+    guid: 1403077937
+    name: Head
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Head
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 21
+        y: 35
+        width: 24
+        height: 18
+      spriteId: 9d9da66ca8ba46942ad32bef11f42e33
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 18
+    guid: 1702833736
+    name: Hatfront
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Hatfront
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 38
+        width: 62
+        height: 26
+      spriteId: 6b444fae749ab7b4687388c4329d7745
+    linkedCells: []
+    parentIndex: 1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 96}
