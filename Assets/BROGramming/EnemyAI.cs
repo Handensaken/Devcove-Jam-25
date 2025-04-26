@@ -7,15 +7,18 @@ public class EnemyAI : MonoBehaviour
     public float speed = 3f;
     public float attackRange = 1;
     private float sqrAttackRange;
+    [SerializeField]
+    float fleeDistance = 1f;
 
     [Header("References")]
     public Animator anim;
     public Rigidbody2D rb;
+    public BoxCollider2D boxcollider;
 
     private GameObject player;
     private float distanceToPlayer = 0;
     private float negativeSideOfPlayerSign;
-    private enemyState state = enemyState.idle;
+    private enemyState state = enemyState.angry;
 
     private void OnValidate()
     {
@@ -71,11 +74,17 @@ public class EnemyAI : MonoBehaviour
         }
         else if (state == enemyState.attacking)
         {
-            //trollol
+            //here there should probably be some kind of wind up, could wait 0.25s before activating this, but for now just activating it is good enough
+            boxcollider.gameObject.SetActive(true);
+            
         }
         else if (state == enemyState.fleeing)
         {
-            Debug.Log("Jag flyr nu reeee");
+            Vector3 dir = transform.position - player.transform.position;
+          //  Vector3 randomCircle = -dir.normalized * fleeDistance;
+            boxcollider.gameObject.SetActive(false);
+            var targetPosition =
+                player.transform.position + dir * fleeDistance;
         }
     }
 

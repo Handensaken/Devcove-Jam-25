@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-        anim.SetFloat("MovDir", movementInput.x);
+       if(anim != null) anim.SetFloat("MovDir", movementInput.x);
         //avoid bounds
         if (transform.position.y >= bounds.x && movementInput.y > 0)
         {
