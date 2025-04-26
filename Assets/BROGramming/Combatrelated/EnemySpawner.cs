@@ -35,7 +35,8 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         int spawnplace = Random.Range(0, spawnlocations.Count);
-        Instantiate(enemy, spawnlocations[spawnplace].position, Quaternion.identity);
+        GameObject enemyyy = Instantiate(enemy, spawnlocations[spawnplace].position, Quaternion.identity);
+        enemyyy.GetComponent<EnemyHealth>().AddConnectedRoom(gameObject);
         enemiesAlive++;
         
     }
@@ -50,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
                 NewWave();
             } else
             {
-                //Här kan man skicka ut ett event att rummet är klart
+                GameEventManager.instance.FightEnd();
                 Destroy(gameObject);
             }
         }
@@ -66,6 +67,7 @@ public class EnemySpawner : MonoBehaviour
     //Denna måste kallas för att starta igång rummet
     public void Activate()
     {
+        Debug.Log("ACTIVATE");
         shouldSpawn = true;
     }
 }
