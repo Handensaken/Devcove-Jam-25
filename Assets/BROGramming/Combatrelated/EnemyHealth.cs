@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] float maxHealth = 100f;
     [SerializeField] GameObject deathVFX;
     private float currentHealth;
+
+    private GameObject connectedRoom;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             Instantiate(deathVFX);
         }
+        if (connectedRoom != null) connectedRoom.GetComponent<EnemySpawner>().RemoveEnemy();
         Destroy(gameObject);
+    }
+
+    public void AddConnectedRoom(GameObject spawner)
+    {
+        connectedRoom = spawner;
     }
 }

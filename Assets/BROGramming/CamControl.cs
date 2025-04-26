@@ -16,9 +16,11 @@ public class CamControl : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(GameEventManager.instance);
+        //        Debug.Log(GameEventManager.instance);
         GameEventManager.instance.OnResumeCamControl += ToPlayer;
     }
+
+    
 
     void OnDestroy()
     {
