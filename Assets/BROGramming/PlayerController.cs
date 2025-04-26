@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [Header("Brawler stuff")]
     [SerializeField] GameObject fist;
     [SerializeField] Transform fistHolder;
-    [SerializeField] float timeBetweenPunches
+    [SerializeField] float timeBetweenPunches;
 
     [Header("Mage stuff")]
     [SerializeField] int MaxMana = 100;
