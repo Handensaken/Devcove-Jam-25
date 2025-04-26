@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6634183752400735331}
   - component: {fileID: 4194772527761990208}
   m_Layer: 0
-  m_Name: AttackHitbox
+  m_Name: AttackHurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5727326398418781696}
   - component: {fileID: 2917900567138548754}
+  - component: {fileID: 4620605149484964796}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -125,8 +126,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   attackRange: 2.5
-  anim: {fileID: 0}
+  anim: {fileID: 4620605149484964796}
   rb: {fileID: 0}
+--- !u!95 &4620605149484964796
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5658109321387868138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe2a6a85cfe8c52408f404468584c860, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6149736346281607346
 GameObject:
   m_ObjectHideFlags: 0

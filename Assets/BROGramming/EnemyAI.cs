@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     public float speed = 3f;
     public float attackRange = 1;
+    private float sqrAttackRange;
 
     [Header("References")]
     public Animator anim;
@@ -13,8 +14,18 @@ public class EnemyAI : MonoBehaviour
 
     private GameObject player;
     private float distanceToPlayer = 0;
-    private float sideOfPlayerSign;
+    private float negativeSideOfPlayerSign;
     private enemyState state = enemyState.angry;
+
+    private void OnValidate()
+    {
+        sqrAttackRange = attackRange * attackRange;
+    }
+
+    private void Awake()
+    {
+        sqrAttackRange = attackRange * attackRange;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,29 +33,32 @@ public class EnemyAI : MonoBehaviour
         player = FindObjectOfType<PlayerController>().gameObject;
     }
 
-    // Update is called once per frame
+    //TODO: Allt. 
     void Update()
     {
         var meMinusPlayer = transform.position - player.transform.position;
         distanceToPlayer = Vector2.SqrMagnitude(meMinusPlayer);
-        sideOfPlayerSign = Mathf.Sign(meMinusPlayer.x);
+        negativeSideOfPlayerSign = Mathf.Sign(meMinusPlayer.x);
 
         if(state == enemyState.idle)
         {
-
+            anim.SetBool("Walking", false);
         }
 
         else if (state == enemyState.angry)
         {
-            //Set animation
-            var targetPosition = player.transform.position + new Vector3(sideOfPlayerSign * attackRange - 0.1f, 0);
+            anim.SetBool("Walking", true);
+
+            var targetPosition = player.transform.position + new Vector3(negativeSideOfPlayerSign * attackRange - 0.1f, 0);
             targetPosition.z = 0;
 
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-            if(distanceToPlayer <= attackRange && Mathf.Abs(meMinusPlayer.y) < Mathf.Abs(meMinusPlayer.x))
+            if(distanceToPlayer <= sqrAttackRange && Mathf.Abs(meMinusPlayer.y) < Mathf.Abs(meMinusPlayer.x))
             {
                 anim.SetTrigger("Attack");
+                anim.SetBool("Walking", false);
+                state = enemyState.attacking;
             }
         }
 
