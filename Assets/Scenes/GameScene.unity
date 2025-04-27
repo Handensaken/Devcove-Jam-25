@@ -527,6 +527,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
+      propertyPath: timeBetweenWaves
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3430123540930995966, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
       propertyPath: m_Name
       value: Fight Zone 1 (3)

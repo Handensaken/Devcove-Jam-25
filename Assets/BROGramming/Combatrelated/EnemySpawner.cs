@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public List<int> EnemyWaveCount = new List<int>();
     [SerializeField] GameObject enemy;
     [SerializeField] List<Transform> spawnlocations = new List<Transform>();
-    [SerializeField] float timeBetweenWaves;
+    [SerializeField] float timeBetweenWaves = 5f;
 
     private bool shouldSpawn = false;
     private float timePassed = 0;
