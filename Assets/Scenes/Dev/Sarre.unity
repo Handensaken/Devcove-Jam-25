@@ -254,11 +254,6 @@ Transform:
   - {fileID: 1438012302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &337189052 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2820012752053605649, guid: a72d1345ee998b045a806b0b5cb9feca, type: 3}
-  m_PrefabInstance: {fileID: 880453362}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &399289269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6681584305896953568, guid: a72d1345ee998b045a806b0b5cb9feca, type: 3}
@@ -773,6 +768,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &849857313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849857314}
+  m_Layer: 0
+  m_Name: background road
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &849857314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849857313}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.59829926, y: -1.1694198, z: 21.699982}
+  m_LocalScale: {x: 0.30999961, y: 2.1699977, z: 2.1699977}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1329413058}
+  m_Father: {fileID: 1995256249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &880453362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,7 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a6232200c20e64cb4337295d4fac4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 337189052}
+  cam: {fileID: 399289269}
   parallaxEffect: 0.1
 --- !u!212 &1126245289
 SpriteRenderer:
@@ -1257,7 +1284,7 @@ GameObject:
   - component: {fileID: 1313348611}
   - component: {fileID: 1313348610}
   m_Layer: 0
-  m_Name: "v\xE4g_0 (2)"
+  m_Name: "v\xE4g_1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1290,7 +1317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a6232200c20e64cb4337295d4fac4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1371254117}
+  cam: {fileID: 399289269}
   parallaxEffect: 0
 --- !u!212 &1313348611
 SpriteRenderer:
@@ -1355,7 +1382,7 @@ GameObject:
   - component: {fileID: 1329413058}
   - component: {fileID: 1329413059}
   m_Layer: 0
-  m_Name: "v\xE4g_0"
+  m_Name: road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1370,13 +1397,13 @@ Transform:
   m_GameObject: {fileID: 1329413057}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.59829926, y: -1.1694198, z: 21.69998}
-  m_LocalScale: {x: 0.30999961, y: 2.1699977, z: 2.1699977}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2079757915}
   - {fileID: 1313348609}
-  m_Father: {fileID: 1995256249}
+  m_Father: {fileID: 849857314}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1329413059
 SpriteRenderer:
@@ -7658,7 +7685,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2047100808}
-  - {fileID: 1329413058}
+  - {fileID: 849857314}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2046128081
@@ -8145,7 +8172,7 @@ GameObject:
   - component: {fileID: 2079757917}
   - component: {fileID: 2079757916}
   m_Layer: 0
-  m_Name: "v\xE4g_0 (1)"
+  m_Name: "v\xE4g_0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8178,7 +8205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a6232200c20e64cb4337295d4fac4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1371254117}
+  cam: {fileID: 399289269}
   parallaxEffect: 0
 --- !u!212 &2079757917
 SpriteRenderer:
