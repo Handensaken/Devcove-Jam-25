@@ -127,10 +127,6 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         timePassed += Time.deltaTime;
-        if (timePassed > 0.5f)
-        {
-            timePassed = 0;
-        }
     }
 
     //player bounds
@@ -143,7 +139,17 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer()
     {
         if (anim != null)
+        {
+            if (movementInput.sqrMagnitude != 0)
+            {
+                anim.SetBool("move", true);
+            }
+            else
+            {
+                anim.SetBool("move", false);
+            }
             anim.SetFloat("MovDir", movementInput.x);
+        }
         //avoid bounds
         if (transform.position.y >= bounds.x && movementInput.y > 0)
         {
@@ -162,7 +168,6 @@ public class PlayerController : MonoBehaviour
         if (facingDir.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
-            Debug.Log(transform.localScale);
         }
         else if (facingDir.x > 0)
         {
@@ -214,13 +219,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log(amogus);
 
         GameObject pog = Instantiate(fireball, SpellSpawnPos.position, Quaternion.identity);
-
-        if (isFacingRight)
-            //activate normal mage animation
-            pog.GetComponent<spellBehaviour>().ShootRight();
-        else
-            //activate flipped mage animation
-            pog.GetComponent<spellBehaviour>().ShootLeft();
+        if (!isFacingRight)
+            pog.transform.rotation = new Quaternion(0, 0, 180, 0);
+        pog.GetComponent<spellBehaviour>().ShootRight();
     }
 
     //Reads attack input
@@ -228,10 +229,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!ctx.action.inProgress)
         {
-            //Debug.Log("HIT THAT CHILD");
-
-
-            //playerClass.Attack();
 
             if (playerClass == PlayerClass.Mage)
             {
@@ -261,6 +258,8 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                Debug.Log(timePassed);
+
                 if (timeBetweenPunches < timePassed)
                 {
                     Debug.Log("Punch");
