@@ -20,7 +20,7 @@ public class spellBehaviour : MonoBehaviour
        
         damagedobjects.Add(gameObject);
         rb = GetComponent<Rigidbody2D>();
-        bool facingright = player.GetComponent<PlayerController>().getfacingright();
+        //bool facingright = player.GetComponent<PlayerController>().getfacingright();
       
         
       

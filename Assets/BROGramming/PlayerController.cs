@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     //facingDir will be used to save the last known looking direction to orient the player sprite after moving
-    // private Vector2 facingDir;
+    private Vector2 facingDir;
+
     //Denna bool moggar din vector2
     [HideInInspector]
     public bool isFacingRight;
@@ -32,8 +33,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject fist;
 
-   
-
     [SerializeField]
     float timeBetweenPunches;
 
@@ -54,10 +53,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float timeBetweenSpells;
 
-
     private float timePassed = 0;
     private float mana;
-    
 
     //Sets up the 2 states for the player to have
     private enum PlayerClass
@@ -132,7 +129,6 @@ public class PlayerController : MonoBehaviour
         timePassed += Time.deltaTime;
         if (timePassed > 0.5f)
         {
-           
             timePassed = 0;
         }
     }
@@ -157,7 +153,22 @@ public class PlayerController : MonoBehaviour
         {
             movementInput.y = 0;
         }
+
         transform.Translate(movementInput * movementSpeed * Time.deltaTime);
+    }
+
+    void LateUpdate()
+    {
+        if (facingDir.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            Debug.Log(transform.localScale);
+        }
+        else if (facingDir.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        //    transform.localScale = new Vector3(-1, 1, 1);
     }
 
     //reads and assings movement vector
@@ -166,6 +177,7 @@ public class PlayerController : MonoBehaviour
         movementInput = ctx.ReadValue<Vector2>();
         if (ctx.action.inProgress)
         {
+            facingDir = movementInput;
             if (movementInput.x >= 0)
             {
                 isFacingRight = true;
@@ -177,7 +189,7 @@ public class PlayerController : MonoBehaviour
         }
         if (ctx.canceled)
         {
-            isFacingRight = true;
+            // isFacingRight = true;
         }
     }
 
@@ -202,14 +214,13 @@ public class PlayerController : MonoBehaviour
         Debug.Log(amogus);
 
         GameObject pog = Instantiate(fireball, SpellSpawnPos.position, Quaternion.identity);
-   
+
         if (isFacingRight)
             //activate normal mage animation
             pog.GetComponent<spellBehaviour>().ShootRight();
         else
             //activate flipped mage animation
             pog.GetComponent<spellBehaviour>().ShootLeft();
-      
     }
 
     //Reads attack input
@@ -330,7 +341,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
- 
     public void RecieveMana(float manaRecieved)
     {
         mana += manaRecieved;
