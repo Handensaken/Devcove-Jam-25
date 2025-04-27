@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
     public BoxCollider2D boxcollider;
+    public EnemyHealth enemyHealth;
 
     private GameObject player;
     private float sqrDistanceToPlayer = 0;
@@ -26,8 +27,8 @@ public class EnemyAI : MonoBehaviour
     private float fleeingTimer;
 
     Vector3 targetFleePosition;
-    bool canAttack = true;
     public static HashSet<GameObject> enemyAttacking = new HashSet<GameObject>();
+
 
     private void OnValidate()
     {
@@ -38,12 +39,23 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         sqrAttackRange = attackRange * attackRange;
+        sqrIdleDetectionRange = idleDetectionRange * idleDetectionRange;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>().gameObject;
+    }
+
+    private void OnEnable()
+    {
+        enemyHealth.onDamageTaken += DamageTaken;
+    }
+
+    private void OnDisable()
+    {
+        enemyHealth.onDamageTaken += DamageTaken;
     }
 
     //TODO: Allt.
@@ -56,7 +68,7 @@ public class EnemyAI : MonoBehaviour
         if (state == enemyState.idle)
         {
             anim.SetBool("Walking", false);
-            if ((EnemyAI.enemyAttacking.Count < 1 && canAttack) || sqrDistanceToPlayer < sqrIdleDetectionRange)
+            if (EnemyAI.enemyAttacking.Count < 1 || sqrDistanceToPlayer < sqrIdleDetectionRange)
             {
                 state = enemyState.angry;
                 EnemyAI.enemyAttacking.Add(gameObject);
@@ -64,11 +76,12 @@ public class EnemyAI : MonoBehaviour
         }
         else if (state == enemyState.angry)
         {
+            transform.localScale = new Vector3(negativeSideOfPlayerSign, 1, 1);
             anim.SetBool("Walking", true);
 
             var targetPosition =
                 player.transform.position
-                + new Vector3(negativeSideOfPlayerSign * attackRange - 0.1f, 0);
+                + new Vector3(negativeSideOfPlayerSign * (attackRange - 0.1f), 0);
             targetPosition.z = 0;
 
             transform.position = Vector3.MoveTowards(
@@ -94,26 +107,26 @@ public class EnemyAI : MonoBehaviour
         }
         else if (state == enemyState.fleeing)
         {
+            transform.localScale = new Vector3(Mathf.Sign(transform.position.x - targetFleePosition.x), 1, 1);
             fleeingTimer += Time.deltaTime;
             anim.SetBool("Walking", true);
-            transform.position = Vector3.MoveTowards(transform.position, targetFleePosition,speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetFleePosition, speed * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, targetFleePosition) < 0.1f || fleeingTimer <= 0.6f)
+            if (Vector3.Distance(transform.position, targetFleePosition) < 0.1f || fleeingTimer >= 1.4f)
             {
                 state = enemyState.idle;
-                transform.localScale = new Vector3(1, 1, 1);
-                StartCoroutine(wait());
             }
         }
     }
 
-
-    private IEnumerator wait()
+    private void DamageTaken()
     {
-        canAttack = false;
-        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Hej");
+        if(state == enemyState.attacking || state == enemyState.fleeing)
         {
-            canAttack = true;
+            state = enemyState.angry;
+            anim.SetTrigger("ForceAngry");
+            anim.SetBool("Walking", true);
         }
     }
 
@@ -133,7 +146,6 @@ public class EnemyAI : MonoBehaviour
     public void AttackEnded()
     {
         Vector3 dir = transform.position - player.transform.position;
-        transform.localScale = new Vector3(-1, 1, 1);
         state = enemyState.fleeing;
         targetFleePosition = player.transform.position + dir * fleeDistance;
         if (targetFleePosition.y > yBounds.x) targetFleePosition.y = yBounds.x;

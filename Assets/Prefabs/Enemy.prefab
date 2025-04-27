@@ -58,6 +58,7 @@ MonoBehaviour:
   anim: {fileID: 2398289504656819060}
   rb: {fileID: 8725032637582284482}
   boxcollider: {fileID: 6114127207080223092}
+  enemyHealth: {fileID: 3587743716699664748}
 --- !u!114 &3587743716699664748
 MonoBehaviour:
   m_ObjectHideFlags: 0

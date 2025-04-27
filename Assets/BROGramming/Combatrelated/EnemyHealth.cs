@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private float currentHealth;
 
     private GameObject connectedRoom;
+    public Action onDamageTaken;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void Damage(float damageamount)
     {
+        onDamageTaken?.Invoke();
         currentHealth -= damageamount;
         if (currentHealth <= 0)
         {
