@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
     public BoxCollider2D boxcollider;
+    public EnemyHealth enemyHealth;
 
     private GameObject player;
     private float sqrDistanceToPlayer = 0;
@@ -27,6 +28,7 @@ public class EnemyAI : MonoBehaviour
 
     Vector3 targetFleePosition;
     public static HashSet<GameObject> enemyAttacking = new HashSet<GameObject>();
+
 
     private void OnValidate()
     {
@@ -46,6 +48,16 @@ public class EnemyAI : MonoBehaviour
         player = FindObjectOfType<PlayerController>().gameObject;
     }
 
+    private void OnEnable()
+    {
+        enemyHealth.onDamageTaken += DamageTaken;
+    }
+
+    private void OnDisable()
+    {
+        enemyHealth.onDamageTaken += DamageTaken;
+    }
+
     //TODO: Allt.
     void Update()
     {
@@ -56,7 +68,6 @@ public class EnemyAI : MonoBehaviour
         if (state == enemyState.idle)
         {
             anim.SetBool("Walking", false);
-            Debug.Log($"dist: {sqrDistanceToPlayer}, detection: {sqrIdleDetectionRange}");
             if (EnemyAI.enemyAttacking.Count < 1 || sqrDistanceToPlayer < sqrIdleDetectionRange)
             {
                 state = enemyState.angry;
@@ -108,6 +119,16 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    private void DamageTaken()
+    {
+        Debug.Log("Hej");
+        if(state == enemyState.attacking || state == enemyState.fleeing)
+        {
+            state = enemyState.angry;
+            anim.SetTrigger("ForceAngry");
+            anim.SetBool("Walking", true);
+        }
+    }
 
     public void ActivateHurtBox(int i)
     {
