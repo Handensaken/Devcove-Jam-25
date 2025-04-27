@@ -55,7 +55,15 @@ public class PlayerController : MonoBehaviour
 
     private float timePassed = 0;
     private float actualManaLmao = 0;
-    private float mana { get { return actualManaLmao; } set { actualManaLmao = value; manaBar.fillAmount = value / MaxMana; } }
+    private float mana
+    {
+        get { return actualManaLmao; }
+        set
+        {
+            actualManaLmao = value;
+            manaBar.fillAmount = value / MaxMana;
+        }
+    }
 
     //Sets up the 2 states for the player to have
     private enum PlayerClass
@@ -99,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
     public void ActivatePlayerInput()
     {
-       // Debug.Log("fu");
+        // Debug.Log("fu");
         playerInput.actions.FindActionMap("Player").Enable();
     }
 
@@ -217,7 +225,7 @@ public class PlayerController : MonoBehaviour
 
     public void Yaya(string amogus)
     {
-     //   Debug.Log(amogus);
+        //   Debug.Log(amogus);
 
         GameObject pog = Instantiate(fireball, SpellSpawnPos.position, Quaternion.identity);
         if (!isFacingRight)
@@ -230,7 +238,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!ctx.action.inProgress)
         {
-
             if (playerClass == PlayerClass.Mage)
             {
                 if (timeBetweenSpells < timePassed)
@@ -253,7 +260,7 @@ public class PlayerController : MonoBehaviour
                     // else
                     //activate flipped mage animation
                     //  pog.GetComponent<spellBehaviour>().ShootLeft();
-                   // Debug.Log("Mage Attack");
+                    // Debug.Log("Mage Attack");
                     timePassed = 0;
                 }
             }
@@ -295,6 +302,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //referenced in animation
+    public void ResCha()
+    {
+        resolutionManager.ChangeResolution();
+        GameEventManager.instance.ScreenShake(0.3f);
+    }
+
     public void SwitchPlayerClass()
     {
         if (mana < manaThreshhold && playerClass == PlayerClass.Brawler)
@@ -304,18 +318,20 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            anim.SetTrigger("switch");
             //tells the resolution manager to change the resolution of the game
-            resolutionManager.ChangeResolution();
-            GameEventManager.instance.ScreenShake();
 
             //checks and changes player sprite and updates player class state
             if (playerClass == PlayerClass.Mage)
             {
+                anim.SetBool("Mage", false);
                 //                playerSpriteRenderer.color = Color.magenta;
                 playerClass = PlayerClass.Brawler;
             }
             else if (playerClass == PlayerClass.Brawler)
             {
+                anim.SetBool("Mage", true);
+
                 // playerSpriteRenderer.color = Color.red;
                 playerClass = PlayerClass.Mage;
             }

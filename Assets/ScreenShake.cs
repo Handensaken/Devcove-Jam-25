@@ -19,10 +19,10 @@ public class ScreenShake : MonoBehaviour
         GameEventManager.instance.OnScreenShake -= Cunt;
     }
 
-    public void Cunt()
+    public void Cunt(float duration)
     {
         //Debug.Log("it do");
-        StartCoroutine(shaking(1f));
+        StartCoroutine(shaking(duration));
     }
 
     private IEnumerator shaking(float fuckiwuki)

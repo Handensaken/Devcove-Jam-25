@@ -308,6 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 114813154}
   - component: {fileID: 114813156}
+  - component: {fileID: 114813157}
   m_Layer: 0
   m_Name: FightCam
   m_TagString: Untagged
@@ -370,6 +371,18 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 393812451}
+--- !u!114 &114813157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114813153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf01bbf1afe6df547bc4f789004cbad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &197616751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,7 +494,7 @@ PrefabInstance:
     - target: {fileID: 6470255691298588986, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
       propertyPath: SpellSpawnPos
       value: 
-      objectReference: {fileID: 933962138}
+      objectReference: {fileID: 0}
     - target: {fileID: 6470255691298588986, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
       propertyPath: fireballchecker
       value: 
@@ -548,10 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3646724556738003390, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 933962138}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
 --- !u!4 &197616752 stripped
@@ -642,6 +652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 393812451}
   - component: {fileID: 393812452}
+  - component: {fileID: 393812453}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -676,6 +687,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &393812453
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393812450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &625174623
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,37 +921,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 625174624}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &933962137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 933962138}
-  m_Layer: 0
-  m_Name: SpawnSpellPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &933962138
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933962137}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.237, y: 0.213, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 197616752}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1060286287
 GameObject:
@@ -1572,6 +1569,7 @@ GameObject:
   - component: {fileID: 1399002343}
   - component: {fileID: 1399002345}
   - component: {fileID: 1399002344}
+  - component: {fileID: 1399002346}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1649,6 +1647,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1399002346
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399002342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1437582178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2473564149609355741, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
@@ -1748,6 +1763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634966535}
   - component: {fileID: 1634966534}
+  - component: {fileID: 1634966536}
   m_Layer: 0
   m_Name: PlayerCam
   m_TagString: Player
@@ -1810,6 +1826,18 @@ Transform:
   - {fileID: 1399002343}
   m_Father: {fileID: 1086105389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1634966536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634966533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf01bbf1afe6df547bc4f789004cbad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1687450293
 PrefabInstance:
   m_ObjectHideFlags: 0
