@@ -51,7 +51,7 @@ public class ResolutionManager : MonoBehaviour
         if (!lowRes)
         {
             //lowers resolution and activates chromatic aberration
-            ScalableBufferManager.ResizeBuffers(0.1f, 0.1f);
+            ScalableBufferManager.ResizeBuffers(0.15f, 0.15f);
             lowRes = true;
             cA.active = true;
         }
