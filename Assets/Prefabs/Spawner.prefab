@@ -55,6 +55,7 @@ MonoBehaviour:
   - {fileID: 5885892089718081519}
   - {fileID: 3749110575309832100}
   - {fileID: 7252928897157622472}
+  timeBetweenWaves: 2.5
 --- !u!1 &4026306932219167571
 GameObject:
   m_ObjectHideFlags: 0
