@@ -84,6 +84,16 @@ public class GameEventManager : MonoBehaviour
         }
     }
 
+    public event Action<float> OnPlayerHurt;
+
+    public void PlayerHurt(float f)
+    {
+        if (OnPlayerHurt != null)
+        {
+            OnPlayerHurt(f);
+        }
+    }
+
     //Hitstop
     public void Stop(float duration)
     {

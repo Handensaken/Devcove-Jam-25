@@ -8,6 +8,12 @@ public class EnemyAttackHurtbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //I want to invoke event so we can add a listener to a UI script without referencing shit constantly
+            //collision.GetComponent<PlayerHealth>().Damage(damage);
+            GameEventManager.instance.PlayerHurt(damage);
+        }
         //Check if it is player and do damage if it is type beat
     }
 }

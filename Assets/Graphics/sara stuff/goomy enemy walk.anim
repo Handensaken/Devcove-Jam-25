@@ -30,8 +30,10 @@ AnimationClip:
       value: {fileID: 9066948081019469079, guid: 8b2366f102fd0b9449837979c4c0acd6, type: 3}
     - time: 0.8
       value: {fileID: 2158263265243609742, guid: 8b2366f102fd0b9449837979c4c0acd6, type: 3}
+    - time: 1
+      value: {fileID: 2329064212272909737, guid: 8b2366f102fd0b9449837979c4c0acd6, type: 3}
     attribute: m_Sprite
-    path: 
+    path: gooby slime sheet_1
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -43,7 +45,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 3450750119
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -57,12 +59,13 @@ AnimationClip:
     - {fileID: 3410552973225036421, guid: 8b2366f102fd0b9449837979c4c0acd6, type: 3}
     - {fileID: 9066948081019469079, guid: 8b2366f102fd0b9449837979c4c0acd6, type: 3}
     - {fileID: 2158263265243609742, guid: 8b2366f102fd0b9449837979c4c0acd6, type: 3}
+    - {fileID: 2329064212272909737, guid: 8b2366f102fd0b9449837979c4c0acd6, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 1.2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

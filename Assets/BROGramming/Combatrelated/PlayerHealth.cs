@@ -13,6 +13,15 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+    void Start()
+    {
+        GameEventManager.instance.OnPlayerHurt += Damage;
+    }
+    void OnDisable()
+    {
+        GameEventManager.instance.OnPlayerHurt -= Damage;
+        
+    }
 
     public void Damage(float damageamount)
     {
@@ -25,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
+        Debug.Log("Player ded");
         onDeath?.Invoke();
     }
 }
