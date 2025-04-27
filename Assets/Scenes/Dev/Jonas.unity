@@ -1283,6 +1283,14 @@ PrefabInstance:
       propertyPath: m_Weight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1660707023722390483, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1589232
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660707023722390483, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000002597945
+      objectReference: {fileID: 0}
     - target: {fileID: 1707255795435898165, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.92062104
