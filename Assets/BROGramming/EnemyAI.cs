@@ -23,6 +23,7 @@ public class EnemyAI : MonoBehaviour
     private float sqrDistanceToPlayer = 0;
     private float negativeSideOfPlayerSign;
     private enemyState state = enemyState.idle;
+    private float fleeingTimer;
 
     Vector3 targetFleePosition;
     bool canAttack = true;
@@ -94,16 +95,11 @@ public class EnemyAI : MonoBehaviour
         }
         else if (state == enemyState.fleeing)
         {
+            fleeingTimer += Time.deltaTime;
             anim.SetBool("Walking", true);
-            //  Vector3 randomCircle = -dir.normalized * fleeDistance;
-            //boxcollider.gameObject.SetActive(false);
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                targetFleePosition,
-                speed * Time.deltaTime
-            );
+            transform.position = Vector3.MoveTowards(transform.position, targetFleePosition,speed * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, targetFleePosition) < 0.1f)
+            if (Vector3.Distance(transform.position, targetFleePosition) < 0.1f || fleeingTimer <= 0.6f)
             {
                 state = enemyState.idle;
                 transform.localScale = new Vector3(1, 1, 1);
@@ -116,7 +112,7 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator wait()
     {
         canAttack = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         {
             canAttack = true;
         }
@@ -144,6 +140,9 @@ public class EnemyAI : MonoBehaviour
         if (targetFleePosition.y > yBounds.x) targetFleePosition.y = yBounds.x;
         if (targetFleePosition.y < yBounds.y) targetFleePosition.y = yBounds.y;
         EnemyAI.enemyAttacking.Remove(gameObject);
+        fleeingTimer = 0;
+
+        //TODO: if last one, go into angry state instead. 
     }
 }
 
