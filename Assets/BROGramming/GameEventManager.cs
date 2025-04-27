@@ -74,13 +74,13 @@ public class GameEventManager : MonoBehaviour
         }
     }
 
-    public event Action OnScreenShake;
+    public event Action<float> OnScreenShake;
 
-    public void ScreenShake()
+    public void ScreenShake(float duration)
     {
         if (OnScreenShake != null)
         {
-            OnScreenShake();
+            OnScreenShake(duration);
         }
     }
 
