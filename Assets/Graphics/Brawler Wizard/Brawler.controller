@@ -116,6 +116,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Mage
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dead
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2334901615308042215}
   m_Solo: 0
@@ -223,6 +226,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Hurt
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5651395086166484718}
@@ -341,6 +347,12 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   - m_Name: switch
     m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Dead
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -498,6 +510,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: switch
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dead
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6623023483217927557}
   m_Solo: 0
@@ -522,6 +537,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Punch
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6148847077750705730}
@@ -574,6 +592,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Pew
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1296805046151057844}
@@ -652,9 +673,9 @@ AnimatorStateMachine:
   - {fileID: 7569327169877915364}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -3789313372669161448}
-    second: []
   - first: {fileID: 4542305264411722979}
+    second: []
+  - first: {fileID: -3789313372669161448}
     second: []
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 40, y: -280, z: 0}
@@ -806,6 +827,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: John Anime
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dead
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8828714503102557717}
   m_Solo: 0
@@ -923,6 +947,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Hurt
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6856687396047642796}

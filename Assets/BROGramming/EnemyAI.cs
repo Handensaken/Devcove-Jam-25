@@ -121,8 +121,7 @@ public class EnemyAI : MonoBehaviour
 
     private void DamageTaken()
     {
-        Debug.Log("Hej");
-        if(state == enemyState.attacking || state == enemyState.fleeing)
+        if(/*state == enemyState.attacking || This cancels attacks*/ state == enemyState.fleeing)
         {
             state = enemyState.angry;
             anim.SetTrigger("ForceAngry");
