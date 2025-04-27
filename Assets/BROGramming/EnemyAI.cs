@@ -55,7 +55,6 @@ public class EnemyAI : MonoBehaviour
 
         if (state == enemyState.idle)
         {
-            Debug.Log(enemyAttacking.Count);
             anim.SetBool("Walking", false);
             if ((EnemyAI.enemyAttacking.Count < 1 && canAttack) || sqrDistanceToPlayer < sqrIdleDetectionRange)
             {
