@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public static bool enemyAttacking = false;
     public float speed = 3f;
     public float attackRange = 1;
     private float sqrAttackRange;
+    public float idleDetectionRange = 1;
+    private float sqrIdleDetectionRange;
 
     [SerializeField]
     float fleeDistance = 1f;
+    public Vector2 yBounds;
 
     [Header("References")]
     public Animator anim;
@@ -18,13 +20,18 @@ public class EnemyAI : MonoBehaviour
     public BoxCollider2D boxcollider;
 
     private GameObject player;
-    private float distanceToPlayer = 0;
+    private float sqrDistanceToPlayer = 0;
     private float negativeSideOfPlayerSign;
     private enemyState state = enemyState.idle;
+
+    Vector3 targetFleePosition;
+    bool canAttack = true;
+    public static HashSet<GameObject> enemyAttacking = new HashSet<GameObject>();
 
     private void OnValidate()
     {
         sqrAttackRange = attackRange * attackRange;
+        sqrIdleDetectionRange = idleDetectionRange * idleDetectionRange;
     }
 
     private void Awake()
@@ -42,20 +49,21 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         var meMinusPlayer = transform.position - player.transform.position;
-        distanceToPlayer = Vector2.SqrMagnitude(meMinusPlayer);
+        sqrDistanceToPlayer = Vector2.SqrMagnitude(meMinusPlayer);
         negativeSideOfPlayerSign = Mathf.Sign(meMinusPlayer.x);
 
         if (state == enemyState.idle)
         {
+            Debug.Log(enemyAttacking.Count);
             anim.SetBool("Walking", false);
-            if (!EnemyAI.enemyAttacking && canAttack)
+            if ((EnemyAI.enemyAttacking.Count < 1 && canAttack) || sqrIdleDetectionRange < sqrDistanceToPlayer)
             {
                 state = enemyState.angry;
+                EnemyAI.enemyAttacking.Add(gameObject);
             }
         }
         else if (state == enemyState.angry)
         {
-            EnemyAI.enemyAttacking = true;
             anim.SetBool("Walking", true);
 
             var targetPosition =
@@ -70,7 +78,7 @@ public class EnemyAI : MonoBehaviour
             );
 
             if (
-                distanceToPlayer <= sqrAttackRange
+                sqrDistanceToPlayer <= sqrAttackRange
                 && Mathf.Abs(meMinusPlayer.y) < Mathf.Abs(meMinusPlayer.x)
             )
             {
@@ -86,7 +94,6 @@ public class EnemyAI : MonoBehaviour
         }
         else if (state == enemyState.fleeing)
         {
-            EnemyAI.enemyAttacking = false;
             anim.SetBool("Walking", true);
             //  Vector3 randomCircle = -dir.normalized * fleeDistance;
             //boxcollider.gameObject.SetActive(false);
@@ -105,7 +112,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    bool canAttack = true;
 
     private IEnumerator wait()
     {
@@ -127,8 +133,7 @@ public class EnemyAI : MonoBehaviour
             boxcollider.gameObject.SetActive(false);
         }
     }
-
-    Vector3 targetFleePosition;
+    
 
     public void AttackEnded()
     {
@@ -136,6 +141,9 @@ public class EnemyAI : MonoBehaviour
         transform.localScale = new Vector3(-1, 1, 1);
         state = enemyState.fleeing;
         targetFleePosition = player.transform.position + dir * fleeDistance;
+        if (targetFleePosition.y > yBounds.x) targetFleePosition.y = yBounds.x;
+        if (targetFleePosition.y < yBounds.y) targetFleePosition.y = yBounds.y;
+        EnemyAI.enemyAttacking.Remove(gameObject);
     }
 }
 

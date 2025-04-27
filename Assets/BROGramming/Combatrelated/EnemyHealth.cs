@@ -39,6 +39,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             Instantiate(deathVFX);
         }
         if (connectedRoom != null) connectedRoom.GetComponent<EnemySpawner>().RemoveEnemy();
+        EnemyAI.enemyAttacking.Remove(gameObject);
         Destroy(gameObject);
     }
 
