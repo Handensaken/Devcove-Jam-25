@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -31,8 +32,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject fist;
 
-    [SerializeField]
-    GameObject fistHolder;
+   
 
     [SerializeField]
     float timeBetweenPunches;
@@ -48,31 +48,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject fireball;
 
-    [Tooltip("The minimum time it will take to shoot a spell")]
-    [SerializeField]
-    float minChargeTime = 0.1f;
-
-    [Tooltip("The max time the spell will scale with")]
-    [SerializeField]
-    float maxChargeTime = 1f;
-
-    [Tooltip("The damage the spell will deal if shot at minimum charge")]
-    [SerializeField]
-    float minDamage = 10;
-
-    [Tooltip("The damage the spell will deal if the shot is fully charged")]
-    [SerializeField]
-    float maxDamage = 100f;
-
     [SerializeField]
     float manaCost = 25f;
 
     [SerializeField]
     float timeBetweenSpells;
 
-    private float timeCharged = 0;
+
     private float timePassed = 0;
     private float mana;
+    
 
     //Sets up the 2 states for the player to have
     private enum PlayerClass
@@ -145,6 +130,11 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         timePassed += Time.deltaTime;
+        if (timePassed > 0.5f)
+        {
+           
+            timePassed = 0;
+        }
     }
 
     //player bounds
@@ -207,15 +197,19 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("Hurt");
     }
 
-    public void Yaya()
+    public void Yaya(string amogus)
     {
+        Debug.Log(amogus);
+
         GameObject pog = Instantiate(fireball, SpellSpawnPos.position, Quaternion.identity);
+   
         if (isFacingRight)
             //activate normal mage animation
             pog.GetComponent<spellBehaviour>().ShootRight();
         else
             //activate flipped mage animation
             pog.GetComponent<spellBehaviour>().ShootLeft();
+      
     }
 
     //Reads attack input
@@ -336,6 +330,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+ 
     public void RecieveMana(float manaRecieved)
     {
         mana += manaRecieved;
