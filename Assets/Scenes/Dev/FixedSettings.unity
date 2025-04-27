@@ -402,6 +402,10 @@ PrefabInstance:
       propertyPath: SpellSpawnPos
       value: 
       objectReference: {fileID: 933962138}
+    - target: {fileID: 6470255691298588986, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
+      propertyPath: fireballchecker
+      value: 
+      objectReference: {fileID: 420482773}
     - target: {fileID: 7426229383391980296, guid: fa78642dfb211ce439798c336d6eebc9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.8620888
@@ -517,6 +521,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &420482773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 420482774}
+  - component: {fileID: 420482775}
+  m_Layer: 0
+  m_Name: fireballchecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &420482774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420482773}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.877878, y: -5.6498203, z: -0.007983477}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &420482775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420482773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c4c9f8d4e87e142b92a0200e5823b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &606098897
@@ -1619,6 +1667,7 @@ MonoBehaviour:
   fireball: {fileID: 1960953124184830437, guid: f2b1ccbe8c6b39846acb3c27584743fb, type: 3}
   manaCost: 25
   timeBetweenSpells: 0
+  fireballchecker: {fileID: 0}
   bounds: {x: -5.5, y: -6.8}
   SpellSpawnPos: {fileID: 933962138}
 --- !u!70 &1437582183
@@ -2695,3 +2744,4 @@ SceneRoots:
   - {fileID: 197616751}
   - {fileID: 1191275546}
   - {fileID: 1546276403}
+  - {fileID: 420482774}

@@ -54,10 +54,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float timeBetweenSpells;
 
-    private float timeCharged = 0;
+
     private float timePassed = 0;
     private float mana;
-    private bool canShoot = true;
+    
 
     //Sets up the 2 states for the player to have
     private enum PlayerClass
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
         timePassed += Time.deltaTime;
         if (timePassed > 0.5f)
         {
-            canShoot = true;
+           
             timePassed = 0;
         }
     }
@@ -200,8 +200,9 @@ public class PlayerController : MonoBehaviour
     public void Yaya(string amogus)
     {
         Debug.Log(amogus);
-      
+
         GameObject pog = Instantiate(fireball, SpellSpawnPos.position, Quaternion.identity);
+   
         if (isFacingRight)
             //activate normal mage animation
             pog.GetComponent<spellBehaviour>().ShootRight();
@@ -329,6 +330,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+ 
     public void RecieveMana(float manaRecieved)
     {
         mana += manaRecieved;
