@@ -20,6 +20,7 @@ public class FightRoomControl : MonoBehaviour
     void Start()
     {
         //        Debug.Log(GameEventManager.instance);
+        GameEventManager.instance.OnFightEnd += Exit;
         GameEventManager.instance.OnResumeCamControl += ToPlayer;
     }
 
@@ -52,5 +53,11 @@ public class FightRoomControl : MonoBehaviour
     void HahaOOgerBooger()
     {
         enemySpawner.Activate();
+    }
+
+    private void Exit()
+    {
+        Destroy(EndMarker);
+        fightCam.gameObject.SetActive(false);
     }
 }

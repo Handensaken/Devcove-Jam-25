@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4525755140111449573}
   - component: {fileID: 431265412796562004}
   m_Layer: 0
-  m_Name: FIREBALL
+  m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   rb: {fileID: 3654139270353541575}
   player: {fileID: 0}
   movespeed: 5
-  damage: 10
+  damage: 100
   timeBeforeDeath: 1
 --- !u!1001 &2100319327242749652
 PrefabInstance:

@@ -7,23 +7,30 @@ public class EnemySpawner : MonoBehaviour
     public List<int> EnemyWaveCount = new List<int>();
     [SerializeField] GameObject enemy;
     [SerializeField] List<Transform> spawnlocations = new List<Transform>();
+    [SerializeField] float timeBetweenWaves;
 
     private bool shouldSpawn = false;
-   
+    private float timePassed = 0;
     private int currentwave = 0;
     private int enemiesAlive = 0;
     
     // Start is called before the first frame update
     void Start()
     {
+        Wait();
     //    Activate();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (shouldSpawn)
+        timePassed += Time.deltaTime;
+        if (timePassed < timeBetweenWaves)
         {
+
+        } else if (shouldSpawn)
+        {
+            
             for (int i = 0; i < EnemyWaveCount[currentwave]; i++)
             {
                 SpawnEnemy();
@@ -34,20 +41,24 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
+        enemiesAlive++;
+        Debug.Log("me when enemy live" + enemiesAlive);
         int spawnplace = Random.Range(0, spawnlocations.Count);
-        Debug.Log(spawnlocations.Count);
-        Debug.Log(spawnplace);
         GameObject enemyyy = Instantiate(enemy, spawnlocations[spawnplace].position, Quaternion.identity);
         enemyyy.GetComponent<EnemyHealth>().AddConnectedRoom(gameObject);
-        enemiesAlive++;
+        
         
     }
 
     public void RemoveEnemy()
     {
+
         enemiesAlive--;
+        Debug.Log("me when enemy ded" + enemiesAlive);
         if (enemiesAlive == 0 && !shouldSpawn)
         {
+            Debug.Log("currentwave: " + currentwave + " enemywave.count: " + EnemyWaveCount.Count);
+            currentwave++;
             if (currentwave < EnemyWaveCount.Count)
             {
                 NewWave();
@@ -61,7 +72,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void NewWave()
     {
-        currentwave++;
+        Wait();
         shouldSpawn = true;
        
     }
@@ -69,7 +80,11 @@ public class EnemySpawner : MonoBehaviour
     //Denna m�ste kallas f�r att starta ig�ng rummet
     public void Activate()
     {
-        Debug.Log("ACTIVATE");
         shouldSpawn = true;
+    }
+
+    private void Wait()
+    {
+        timePassed = 0;
     }
 }

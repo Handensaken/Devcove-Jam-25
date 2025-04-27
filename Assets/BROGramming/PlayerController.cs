@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     public void ActivatePlayerInput()
     {
-        Debug.Log("fu");
+       // Debug.Log("fu");
         playerInput.actions.FindActionMap("Player").Enable();
     }
 
@@ -216,7 +216,7 @@ public class PlayerController : MonoBehaviour
 
     public void Yaya(string amogus)
     {
-        Debug.Log(amogus);
+     //   Debug.Log(amogus);
 
         GameObject pog = Instantiate(fireball, SpellSpawnPos.position, Quaternion.identity);
         if (!isFacingRight)
@@ -252,7 +252,7 @@ public class PlayerController : MonoBehaviour
                     // else
                     //activate flipped mage animation
                     //  pog.GetComponent<spellBehaviour>().ShootLeft();
-                    Debug.Log("Mage Attack");
+                   // Debug.Log("Mage Attack");
                     timePassed = 0;
                 }
             }
