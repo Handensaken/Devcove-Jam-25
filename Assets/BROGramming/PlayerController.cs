@@ -229,9 +229,10 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
+        DisablePlayerInput();
         anim.SetBool("Dead", true);
         anim.updateMode = AnimatorUpdateMode.UnscaledTime;
-        Time.timeScale = 0.6f;
+        Time.timeScale = 0.4f;
         StartCoroutine(slowTimeScale());
     }
 
