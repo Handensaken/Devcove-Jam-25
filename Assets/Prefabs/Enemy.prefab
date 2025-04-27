@@ -52,8 +52,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   attackRange: 0.5
-  idleDetectionRange: 1.3
+  idleDetectionRange: 1.2
   fleeDistance: 3
+  yBounds: {x: -5.2, y: -6.83}
   anim: {fileID: 2398289504656819060}
   rb: {fileID: 8725032637582284482}
   boxcollider: {fileID: 6114127207080223092}
