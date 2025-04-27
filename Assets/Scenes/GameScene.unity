@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a42ea12ed49a6342987a8045e9df282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1634966533}
+  Player: {fileID: 1437582178}
   EndScene: EndScene
 --- !u!61 &35961498
 BoxCollider2D:
@@ -627,6 +627,14 @@ PrefabInstance:
       propertyPath: timeBetweenWaves
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
+      propertyPath: EnemyWaveCount.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
+      propertyPath: EnemyWaveCount.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3430123540930995966, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
       propertyPath: m_Name
       value: Fight Zone 1 (3)
@@ -1091,6 +1099,14 @@ PrefabInstance:
     - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
       propertyPath: timeBetweenWaves
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
+      propertyPath: EnemyWaveCount.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
+      propertyPath: EnemyWaveCount.Array.data[1]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3430123540930995966, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
       propertyPath: m_Name
@@ -2038,6 +2054,22 @@ PrefabInstance:
     - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
       propertyPath: timeBetweenWaves
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
+      propertyPath: EnemyWaveCount.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
+      propertyPath: EnemyWaveCount.Array.data[0]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
+      propertyPath: EnemyWaveCount.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372754264528037927, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
+      propertyPath: EnemyWaveCount.Array.data[2]
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3430123540930995966, guid: 780d9381c36be094ea9e0e7aa6b91894, type: 3}
       propertyPath: m_Name
