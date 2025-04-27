@@ -35,6 +35,8 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         int spawnplace = Random.Range(0, spawnlocations.Count);
+        Debug.Log(spawnlocations.Count);
+        Debug.Log(spawnplace);
         GameObject enemyyy = Instantiate(enemy, spawnlocations[spawnplace].position, Quaternion.identity);
         enemyyy.GetComponent<EnemyHealth>().AddConnectedRoom(gameObject);
         enemiesAlive++;
