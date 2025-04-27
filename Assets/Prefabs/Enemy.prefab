@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8725032637582284482}
   - component: {fileID: 625163845154834908}
   - component: {fileID: 2398289504656819060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 5740463551899881393}
   - component: {fileID: 6114127207080223092}
   - component: {fileID: 2264258554827864883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513915430614465903}
   - component: {fileID: 5080350518020143705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gooby slime sheet_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
