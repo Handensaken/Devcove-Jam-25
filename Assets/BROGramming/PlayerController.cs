@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput;
 
     [SerializeField]
-    Slider manaSlider;
+    Image manaBar;
 
     [SerializeField]
     private float movementSpeed = 5;
@@ -54,7 +54,8 @@ public class PlayerController : MonoBehaviour
     float timeBetweenSpells;
 
     private float timePassed = 0;
-    private float mana;
+    private float actualManaLmao = 0;
+    private float mana { get { return actualManaLmao; } set { actualManaLmao = value; manaBar.fillAmount = value / MaxMana; } }
 
     //Sets up the 2 states for the player to have
     private enum PlayerClass
