@@ -93,6 +93,8 @@ public class PlayerController : MonoBehaviour
         GameEventManager.instance.OnActivatePlayerInput += ActivatePlayerInput;
         GameEventManager.instance.OnStopPlayerInput += DisablePlayerInput;
         GameEventManager.instance.OnPlayerHurt += HurtPlayer;
+
+        anim.SetBool("Mage", true);
     }
 
     //Set up player switch event. This could be done natively as is now, but later down the line we want effects and shit to be able to
