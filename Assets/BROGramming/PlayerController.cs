@@ -229,11 +229,11 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        DisablePlayerInput();
         anim.SetBool("Dead", true);
         anim.updateMode = AnimatorUpdateMode.UnscaledTime;
-        Time.timeScale = 0.4f;
+        Time.timeScale = 0.7f;
         StartCoroutine(slowTimeScale());
+        DisablePlayerInput();
     }
 
     public void EndOfDeathAnimation()
@@ -245,8 +245,11 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator slowTimeScale()
     {
-        yield return new WaitForSecondsRealtime(0.05f);
-        Time.timeScale -= 0.01f;
+        while (Time.timeScale > 0.1f)
+        {
+            yield return new WaitForSecondsRealtime(0.05f);
+            Time.timeScale -= 0.01f;
+        }
     }
 
     public void Yaya(string amogus)
