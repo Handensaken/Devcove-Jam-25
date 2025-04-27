@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput playerInput;
 
+    private PlayerHealth playerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -223,6 +225,27 @@ public class PlayerController : MonoBehaviour
     private void HurtPlayer(float f)
     {
         anim.SetTrigger("Hurt");
+    }
+
+    public void Death()
+    {
+        anim.SetBool("Dead", true);
+        anim.updateMode = AnimatorUpdateMode.UnscaledTime;
+        Time.timeScale = 0.6f;
+        StartCoroutine(slowTimeScale());
+    }
+
+    public void EndOfDeathAnimation()
+    {
+        Time.timeScale = 1f;
+        StopAllCoroutines();
+        SceneManager.LoadScene("Main");
+    }
+
+    IEnumerator slowTimeScale()
+    {
+        yield return new WaitForSecondsRealtime(0.05f);
+        Time.timeScale -= 0.01f;
     }
 
     public void Yaya(string amogus)
