@@ -20,7 +20,7 @@ public class spellBehaviour : MonoBehaviour
        
         damagedobjects.Add(gameObject);
         rb = GetComponent<Rigidbody2D>();
-        bool facingright = player.GetComponent<PlayerController>().getfacingright();
+        //bool facingright = player.GetComponent<PlayerController>().getfacingright();
       
         
       
@@ -70,7 +70,8 @@ public class spellBehaviour : MonoBehaviour
             {
                 idmg.Damage(damage);
                 damagedobjects.Add(collision.gameObject);
-                Debug.Log("I did ouchie to meanie " + collision.gameObject.name);
+             //   Debug.Log("I did ouchie to meanie " + collision.gameObject.name);
+               // Debug.Log("Damage " + damage);
             }
         }
     }

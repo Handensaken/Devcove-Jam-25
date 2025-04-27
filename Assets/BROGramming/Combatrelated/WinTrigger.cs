@@ -20,7 +20,8 @@ public class WinTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == Player)
+        Debug.Log(gameObject.name);
+        if (collision.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(EndScene);
         }

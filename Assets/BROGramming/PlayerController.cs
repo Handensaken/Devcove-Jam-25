@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     //facingDir will be used to save the last known looking direction to orient the player sprite after moving
-    // private Vector2 facingDir;
+    private Vector2 facingDir;
+
     //Denna bool moggar din vector2
     [HideInInspector]
     public bool isFacingRight;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput;
 
     [SerializeField]
-    Slider manaSlider;
+    Image manaBar;
 
     [SerializeField]
     private float movementSpeed = 5;
@@ -31,8 +32,6 @@ public class PlayerController : MonoBehaviour
     [Header("Brawler stuff")]
     [SerializeField]
     GameObject fist;
-
-   
 
     [SerializeField]
     float timeBetweenPunches;
@@ -54,10 +53,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float timeBetweenSpells;
 
-
     private float timePassed = 0;
-    private float mana;
-    
+    private float actualManaLmao = 0;
+    private float mana { get { return actualManaLmao; } set { actualManaLmao = value; manaBar.fillAmount = value / MaxMana; } }
 
     //Sets up the 2 states for the player to have
     private enum PlayerClass
@@ -101,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
     public void ActivatePlayerInput()
     {
-        Debug.Log("fu");
+       // Debug.Log("fu");
         playerInput.actions.FindActionMap("Player").Enable();
     }
 
@@ -130,11 +128,6 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         timePassed += Time.deltaTime;
-        if (timePassed > 0.5f)
-        {
-           
-            timePassed = 0;
-        }
     }
 
     //player bounds
@@ -147,7 +140,17 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer()
     {
         if (anim != null)
+        {
+            if (movementInput.sqrMagnitude != 0)
+            {
+                anim.SetBool("move", true);
+            }
+            else
+            {
+                anim.SetBool("move", false);
+            }
             anim.SetFloat("MovDir", movementInput.x);
+        }
         //avoid bounds
         if (transform.position.y >= bounds.x && movementInput.y > 0)
         {
@@ -157,7 +160,21 @@ public class PlayerController : MonoBehaviour
         {
             movementInput.y = 0;
         }
+
         transform.Translate(movementInput * movementSpeed * Time.deltaTime);
+    }
+
+    void LateUpdate()
+    {
+        if (facingDir.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (facingDir.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        //    transform.localScale = new Vector3(-1, 1, 1);
     }
 
     //reads and assings movement vector
@@ -166,6 +183,7 @@ public class PlayerController : MonoBehaviour
         movementInput = ctx.ReadValue<Vector2>();
         if (ctx.action.inProgress)
         {
+            facingDir = movementInput;
             if (movementInput.x >= 0)
             {
                 isFacingRight = true;
@@ -177,7 +195,7 @@ public class PlayerController : MonoBehaviour
         }
         if (ctx.canceled)
         {
-            isFacingRight = true;
+            // isFacingRight = true;
         }
     }
 
@@ -199,17 +217,12 @@ public class PlayerController : MonoBehaviour
 
     public void Yaya(string amogus)
     {
-        Debug.Log(amogus);
+     //   Debug.Log(amogus);
 
         GameObject pog = Instantiate(fireball, SpellSpawnPos.position, Quaternion.identity);
-   
-        if (isFacingRight)
-            //activate normal mage animation
-            pog.GetComponent<spellBehaviour>().ShootRight();
-        else
-            //activate flipped mage animation
-            pog.GetComponent<spellBehaviour>().ShootLeft();
-      
+        if (!isFacingRight)
+            pog.transform.rotation = new Quaternion(0, 0, 180, 0);
+        pog.GetComponent<spellBehaviour>().ShootRight();
     }
 
     //Reads attack input
@@ -217,10 +230,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!ctx.action.inProgress)
         {
-            //Debug.Log("HIT THAT CHILD");
-
-
-            //playerClass.Attack();
 
             if (playerClass == PlayerClass.Mage)
             {
@@ -244,12 +253,14 @@ public class PlayerController : MonoBehaviour
                     // else
                     //activate flipped mage animation
                     //  pog.GetComponent<spellBehaviour>().ShootLeft();
-                    Debug.Log("Mage Attack");
+                   // Debug.Log("Mage Attack");
                     timePassed = 0;
                 }
             }
             else
             {
+                Debug.Log(timePassed);
+
                 if (timeBetweenPunches < timePassed)
                 {
                     Debug.Log("Punch");
@@ -330,7 +341,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
- 
     public void RecieveMana(float manaRecieved)
     {
         mana += manaRecieved;
