@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SpawnerTrigger : MonoBehaviour
 {
+   public GameObject player;
     public GameObject spawner;
-    public GameObject spelare;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ENTERED");
-        if (collision.gameObject == spelare)
-        {
-            Debug.Log("is player");
+        if (collision.isTrigger) return;
+        else
+            if (collision.gameObject == player)
             spawner.GetComponent<EnemySpawner>().Activate();
-        }
+       
     }
+
+    
 }
