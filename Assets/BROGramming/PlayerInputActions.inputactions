@@ -91,6 +91,17 @@
                 },
                 {
                     "name": "",
+                    "id": "2aaef83c-6781-473a-bfff-13528059b081",
+                    "path": "<Keyboard>/f5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3b7cb85f-b724-4591-888d-cb2db0494334",
                     "path": "<Keyboard>/k",
                     "interactions": "",
@@ -102,12 +113,12 @@
                 },
                 {
                     "name": "",
-                    "id": "2aaef83c-6781-473a-bfff-13528059b081",
-                    "path": "<Keyboard>/q",
+                    "id": "4a6df8d6-6a5f-44bf-a7ef-91ca77e263ee",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Switch",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -10,12 +10,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] GameObject deathVFX;
     private float currentHealth;
 
+    private DamageFlash _damageFlash;
+
     private GameObject connectedRoom;
     public Action onDamageTaken;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        _damageFlash = GetComponent<DamageFlash>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         onDamageTaken?.Invoke();
         currentHealth -= damageamount;
+
+        _damageFlash.CallDamageFlash();
+
         if (currentHealth <= 0)
         {
             Die();
