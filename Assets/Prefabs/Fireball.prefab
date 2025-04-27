@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 8884765167711133234}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7879975139805216278}
@@ -122,9 +122,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7773030176158214555}
     m_Modifications:
+    - target: {fileID: 1645911093533944383, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669989852512554009, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5469188824570053054, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
       propertyPath: m_Name
       value: FIREBALL BURRBURRPUBURR
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512381190562009262, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512381190562009262, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512381190562009262, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.099999905
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018528894542839454, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018528894542839454, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018528894542839454, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8106091128946604226, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -132,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8106091128946604226, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.064
       objectReference: {fileID: 0}
     - target: {fileID: 8106091128946604226, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -165,6 +197,22 @@ PrefabInstance:
     - target: {fileID: 8106091128946604226, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157793118266341205, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157793118266341205, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157793118266341205, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.09799991
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532786020529263786, guid: ffde84937f2c382469f4dec65155d9c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
